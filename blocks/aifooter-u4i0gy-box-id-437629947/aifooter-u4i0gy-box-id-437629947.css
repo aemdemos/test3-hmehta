@@ -1,0 +1,20 @@
+aifooter-u4i0gy-box-id-437629947 {
+  background-color: var(--light-color);
+  font-size: var(--body-font-size-xs);
+}
+
+aifooter-u4i0gy-box-id-437629947 .aifooter-u4i0gy-box-id-437629947 > div {
+  margin: auto;
+  max-width: 1200px;
+  padding: 40px 24px 24px;
+}
+
+aifooter-u4i0gy-box-id-437629947 .aifooter-u4i0gy-box-id-437629947 p {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  aifooter-u4i0gy-box-id-437629947 .aifooter-u4i0gy-box-id-437629947 > div {
+    padding: 40px 32px 24px;
+  }
+}
