@@ -1,0 +1,55 @@
+
+.aicolumns-u4i0gy-519531666-wrapper {
+  display: flex;
+  align-items: center; /* Center the items vertically */
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.aicolumns-u4i0gy-519531666 > div {
+  display: flex;
+  flex-direction: row; /* Ensure horizontal layout */
+  align-items: center; /* Center items vertically */
+}
+
+.aicolumns-u4i0gy-519531666-img-col {
+  margin-right: 15px; /* Adjust space between the image and the text content */
+}
+
+.aicolumns-u4i0gy-519531666 img {
+  width: auto; /* Maintain aspect ratio */
+  height: 140px; /* Adjust the height to match the original */
+}
+
+.aicolumns-u4i0gy-519531666 h1 {
+  font-size: 1.75rem; /* Adjust font size as needed */
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+}
+
+.aicolumns-u4i0gy-519531666 p {
+  margin: 0; /* Remove default margin */
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+.aicolumns-u4i0gy-519531666 p:first-of-type {
+  margin-top: 5px; /* Add some space between the title and the first paragraph */
+  font-weight: normal;
+}
+
+.aicolumns-u4i0gy-519531666 p:nth-of-type(2),
+.aicolumns-u4i0gy-519531666 p:nth-of-type(3) {
+  font-weight: normal; /* Adjust font weight to normal */
+  font-size: 0.9rem; /* Adjust font size as needed */
+  margin-top: 5px; /* Reduce space between paragraphs */
+}
+
+@media (width >= 900px) {
+  .aicolumns-u4i0gy-519531666 > div {
+    flex-direction: row; /* Ensure horizontal layout */
+    align-items: center; /* Center items vertically */
+  }
+
+  .aicolumns-u4i0gy-519531666-img-col {
+    margin-right: 15px; /* Adjust space between the image and the text content */
+  }
+}
