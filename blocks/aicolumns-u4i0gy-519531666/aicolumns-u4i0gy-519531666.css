@@ -43,7 +43,7 @@
   margin-top: 5px; /* Reduce space between paragraphs */
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .aicolumns-u4i0gy-519531666 > div {
     flex-direction: row; /* Ensure horizontal layout */
     align-items: center; /* Center items vertically */
