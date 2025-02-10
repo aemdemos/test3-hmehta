@@ -36,7 +36,7 @@
               "x": 0,
               "y": 35,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-bbpzwi-1102402240"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id--519531635",
@@ -61,7 +61,7 @@
               "x": 0,
               "y": 70,
               "mapping": "columns",
-              "customBlockName": "aicolumns-bbpzwi-519531635"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id--1102402209",
@@ -98,7 +98,7 @@
               "x": 0,
               "y": 252,
               "mapping": "columns",
-              "customBlockName": "aicolumns-bbpzwi-1102402209"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id-494745251",
@@ -114,7 +114,7 @@
               "x": 0,
               "y": 314,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-bbpzwi-box-id-494745251"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id-494745282",
@@ -139,7 +139,7 @@
               "x": 40,
               "y": 509,
               "mapping": "columns",
-              "customBlockName": "aicolumns-bbpzwi-box-id-494745282"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id--242226635",
@@ -155,7 +155,7 @@
               "x": 40,
               "y": 1828,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-bbpzwi-242226635"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id-1018029406",
@@ -184,7 +184,7 @@
               "x": 40,
               "y": 1857,
               "mapping": "columns",
-              "customBlockName": "aicolumns-bbpzwi-box-id-1018029406"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id--1102402147",
@@ -200,7 +200,7 @@
               "x": 0,
               "y": 2125,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-bbpzwi-1102402147"
+              "customBlockName": "aidefaultContent"
             }
           ]
         }

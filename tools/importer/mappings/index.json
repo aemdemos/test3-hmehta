@@ -36,7 +36,7 @@
               "x": 0,
               "y": 35,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-u4i0gy-1102402116"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id--519531666",
@@ -61,7 +61,7 @@
               "x": 0,
               "y": 70,
               "mapping": "columns",
-              "customBlockName": "aicolumns-u4i0gy-519531666"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id--1102402085",
@@ -98,7 +98,7 @@
               "x": 0,
               "y": 252,
               "mapping": "columns",
-              "customBlockName": "aicolumns-u4i0gy-1102402085"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id-241692432",
@@ -114,7 +114,7 @@
               "x": 0,
               "y": 317,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-u4i0gy-box-id-241692432"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id-95299458",
@@ -147,7 +147,7 @@
               "x": 0,
               "y": 1060,
               "mapping": "cards",
-              "customBlockName": "aicards-u4i0gy-box-id-95299458"
+              "customBlockName": "aicards"
             },
             {
               "id": "box-id--1297729377",
@@ -163,7 +163,7 @@
               "x": 478,
               "y": 1340,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-u4i0gy-1297729377"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id-494745282",
@@ -188,7 +188,7 @@
               "x": 0,
               "y": 1323,
               "mapping": "columns",
-              "customBlockName": "aicolumns-u4i0gy-box-id-494745282"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id-1596628132",
@@ -213,7 +213,7 @@
               "x": 40,
               "y": 1786,
               "mapping": "cards",
-              "customBlockName": "aicards-u4i0gy-box-id-1596628132"
+              "customBlockName": "aicards"
             },
             {
               "id": "box-id-2074294243",
@@ -229,7 +229,7 @@
               "x": 50,
               "y": 2069,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-u4i0gy-box-id-2074294243"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id-2074294274",
@@ -258,7 +258,7 @@
               "x": 40,
               "y": 2137,
               "mapping": "columns",
-              "customBlockName": "aicolumns-u4i0gy-box-id-2074294274"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id-1596628194",
@@ -274,7 +274,7 @@
               "x": 40,
               "y": 2636,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-u4i0gy-box-id-1596628194"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id-1493013305",
@@ -290,7 +290,7 @@
               "x": 40,
               "y": 2965,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-u4i0gy-box-id-1493013305"
+              "customBlockName": "aidefaultContent"
             },
             {
               "id": "box-id--1024107302",
@@ -319,7 +319,7 @@
               "x": 40,
               "y": 2994,
               "mapping": "columns",
-              "customBlockName": "aicolumns-u4i0gy-1024107302"
+              "customBlockName": "aicolumns"
             },
             {
               "id": "box-id-185265704",
@@ -335,7 +335,7 @@
               "x": 0,
               "y": 3262,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-u4i0gy-box-id-185265704"
+              "customBlockName": "aidefaultContent"
             }
           ]
         }

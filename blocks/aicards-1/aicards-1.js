@@ -7,8 +7,8 @@ export default function decorate(block) {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'aicards-u4i0gy-box-id-95299458-card-image';
-      else div.className = 'aicards-u4i0gy-box-id-95299458-card-body';
+      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'aicards-1-card-image';
+      else div.className = 'aicards-1-card-body';
     });
     ul.append(li);
   });

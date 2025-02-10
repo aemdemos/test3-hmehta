@@ -19,7 +19,7 @@
             "x": 0,
             "y": 3323,
             "mapping": "footer",
-            "customBlockName": "aifooter-u4i0gy-box-id-437629947"
+            "customBlockName": "aifooter"
           }
         ]
       },
@@ -41,7 +41,7 @@
             "x": 0,
             "y": 0,
             "mapping": "header",
-            "customBlockName": "aiheader-u4i0gy-1102402302"
+            "customBlockName": "aiheader"
           }
         ]
       },
@@ -63,7 +63,7 @@
             "x": 0,
             "y": 35,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-u4i0gy-1102402116"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -79,8 +79,8 @@
             },
             "x": 0,
             "y": 317,
-            "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-u4i0gy-box-id-241692432"
+            "mapping": "hero",
+            "customBlockName": "aihero-1"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -97,7 +97,7 @@
             "x": 478,
             "y": 1340,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-u4i0gy-1297729377"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -114,7 +114,7 @@
             "x": 50,
             "y": 2069,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-u4i0gy-box-id-2074294243"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -130,8 +130,8 @@
             },
             "x": 40,
             "y": 2636,
-            "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-u4i0gy-box-id-1596628194"
+            "mapping": "Cards",
+            "customBlockName": "aiCards-0925"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -148,7 +148,7 @@
             "x": 40,
             "y": 2965,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-u4i0gy-box-id-1493013305"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -165,7 +165,7 @@
             "x": 0,
             "y": 3262,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-u4i0gy-box-id-185265704"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/about-our-school.html",
@@ -182,7 +182,7 @@
             "x": 0,
             "y": 35,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-bbpzwi-1102402240"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/about-our-school.html",
@@ -199,7 +199,7 @@
             "x": 0,
             "y": 314,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-bbpzwi-box-id-494745251"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/about-our-school.html",
@@ -216,7 +216,7 @@
             "x": 40,
             "y": 1828,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-bbpzwi-242226635"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/about-our-school.html",
@@ -233,7 +233,7 @@
             "x": 0,
             "y": 2125,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-bbpzwi-1102402147"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/supporting-our-students.html",
@@ -250,7 +250,7 @@
             "x": 0,
             "y": 35,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-ue65o8-1102402240"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/supporting-our-students.html",
@@ -267,7 +267,7 @@
             "x": 0,
             "y": 314,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-ue65o8-box-id-494745251"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/supporting-our-students.html",
@@ -284,7 +284,7 @@
             "x": 40,
             "y": 3408,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-ue65o8-242226635"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/supporting-our-students.html",
@@ -301,7 +301,7 @@
             "x": 0,
             "y": 3705,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-ue65o8-1102402147"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/learning-at-our-school.html",
@@ -318,7 +318,7 @@
             "x": 0,
             "y": 35,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-su539l-1102402240"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/learning-at-our-school.html",
@@ -335,7 +335,7 @@
             "x": 0,
             "y": 314,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-su539l-box-id-494745251"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/learning-at-our-school.html",
@@ -352,7 +352,7 @@
             "x": 40,
             "y": 1958,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-su539l-242226635"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/learning-at-our-school.html",
@@ -369,7 +369,7 @@
             "x": 0,
             "y": 2255,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-su539l-1102402147"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/for-parents.html",
@@ -386,7 +386,7 @@
             "x": 0,
             "y": 35,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-i9q9cm-1102402240"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/for-parents.html",
@@ -403,7 +403,7 @@
             "x": 0,
             "y": 314,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-i9q9cm-box-id-494745251"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/for-parents.html",
@@ -420,7 +420,7 @@
             "x": 40,
             "y": 1698,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-i9q9cm-242226635"
+            "customBlockName": "aidefaultContent"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/for-parents.html",
@@ -437,7 +437,7 @@
             "x": 0,
             "y": 1995,
             "mapping": "defaultContent",
-            "customBlockName": "aidefaultContent-i9q9cm-1102402147"
+            "customBlockName": "aidefaultContent"
           }
         ]
       },
@@ -468,7 +468,7 @@
             "x": 0,
             "y": 70,
             "mapping": "columns",
-            "customBlockName": "aicolumns-u4i0gy-519531666"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -506,7 +506,7 @@
             "x": 0,
             "y": 252,
             "mapping": "columns",
-            "customBlockName": "aicolumns-u4i0gy-1102402085"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -532,7 +532,7 @@
             "x": 0,
             "y": 1323,
             "mapping": "columns",
-            "customBlockName": "aicolumns-u4i0gy-box-id-494745282"
+            "customBlockName": "aicolumns-1023"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -562,7 +562,7 @@
             "x": 40,
             "y": 2137,
             "mapping": "columns",
-            "customBlockName": "aicolumns-u4i0gy-box-id-2074294274"
+            "customBlockName": "aicolumns-0749"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -592,7 +592,7 @@
             "x": 40,
             "y": 2994,
             "mapping": "columns",
-            "customBlockName": "aicolumns-u4i0gy-1024107302"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/about-our-school.html",
@@ -618,7 +618,7 @@
             "x": 0,
             "y": 70,
             "mapping": "columns",
-            "customBlockName": "aicolumns-bbpzwi-519531635"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/about-our-school.html",
@@ -656,7 +656,7 @@
             "x": 0,
             "y": 252,
             "mapping": "columns",
-            "customBlockName": "aicolumns-bbpzwi-1102402209"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/about-our-school.html",
@@ -682,7 +682,7 @@
             "x": 40,
             "y": 509,
             "mapping": "columns",
-            "customBlockName": "aicolumns-bbpzwi-box-id-494745282"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/about-our-school.html",
@@ -712,7 +712,7 @@
             "x": 40,
             "y": 1857,
             "mapping": "columns",
-            "customBlockName": "aicolumns-bbpzwi-box-id-1018029406"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/supporting-our-students.html",
@@ -738,7 +738,7 @@
             "x": 0,
             "y": 70,
             "mapping": "columns",
-            "customBlockName": "aicolumns-ue65o8-519531635"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/supporting-our-students.html",
@@ -776,7 +776,7 @@
             "x": 0,
             "y": 252,
             "mapping": "columns",
-            "customBlockName": "aicolumns-ue65o8-1102402209"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/supporting-our-students.html",
@@ -802,7 +802,7 @@
             "x": 40,
             "y": 509,
             "mapping": "columns",
-            "customBlockName": "aicolumns-ue65o8-box-id-494745282"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/supporting-our-students.html",
@@ -832,7 +832,7 @@
             "x": 40,
             "y": 3437,
             "mapping": "columns",
-            "customBlockName": "aicolumns-ue65o8-box-id-1018029406"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/learning-at-our-school.html",
@@ -858,7 +858,7 @@
             "x": 0,
             "y": 70,
             "mapping": "columns",
-            "customBlockName": "aicolumns-su539l-519531635"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/learning-at-our-school.html",
@@ -896,7 +896,7 @@
             "x": 0,
             "y": 252,
             "mapping": "columns",
-            "customBlockName": "aicolumns-su539l-1102402209"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/learning-at-our-school.html",
@@ -922,7 +922,7 @@
             "x": 40,
             "y": 509,
             "mapping": "columns",
-            "customBlockName": "aicolumns-su539l-box-id-494745282"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/learning-at-our-school.html",
@@ -952,7 +952,7 @@
             "x": 40,
             "y": 1987,
             "mapping": "columns",
-            "customBlockName": "aicolumns-su539l-box-id-1018029406"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/for-parents.html",
@@ -978,7 +978,7 @@
             "x": 0,
             "y": 70,
             "mapping": "columns",
-            "customBlockName": "aicolumns-i9q9cm-519531635"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/for-parents.html",
@@ -1016,7 +1016,7 @@
             "x": 0,
             "y": 252,
             "mapping": "columns",
-            "customBlockName": "aicolumns-i9q9cm-1102402209"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/for-parents.html",
@@ -1042,7 +1042,7 @@
             "x": 40,
             "y": 509,
             "mapping": "columns",
-            "customBlockName": "aicolumns-i9q9cm-box-id-494745282"
+            "customBlockName": "aicolumns"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/for-parents.html",
@@ -1072,7 +1072,7 @@
             "x": 40,
             "y": 1727,
             "mapping": "columns",
-            "customBlockName": "aicolumns-i9q9cm-box-id-1018029406"
+            "customBlockName": "aicolumns"
           }
         ]
       },
@@ -1111,7 +1111,7 @@
             "x": 0,
             "y": 1060,
             "mapping": "cards",
-            "customBlockName": "aicards-u4i0gy-box-id-95299458"
+            "customBlockName": "aicards-1"
           },
           {
             "url": "https://fortstreet-p.schools.nsw.gov.au/",
@@ -1136,8 +1136,8 @@
             },
             "x": 40,
             "y": 1786,
-            "mapping": "cards",
-            "customBlockName": "aicards-u4i0gy-box-id-1596628132"
+            "mapping": "columns",
+            "customBlockName": "aicolumns-1039"
           }
         ]
       }
