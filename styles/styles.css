@@ -18,6 +18,7 @@
     --dark-color: #505050;
     --text-color: #131313;
     --link-color: #3b63fb;
+    --light-grey-color: #e0e0e0;
     --link-hover-color: #1d3ecf;
     --body-font-family: "Open Sans", "Open Sans Fallback", "sans-serif";
     --heading-font-family: "Zilla Slab", "Zilla Slab Fallback";
@@ -340,5 +341,4 @@ main .section.light, main .section.highlight {
 
 main .section.grey-background {
     background-color: #efefef;
-    /* color: #fff; */
 }
