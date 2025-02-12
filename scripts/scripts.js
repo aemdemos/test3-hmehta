@@ -12,7 +12,10 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  getMetadata,
 } from './aem.js';
+
+import * as domHelper from './dom-helpers.js';
 
 /**
  * Builds hero block and prepends to main in a new section.
@@ -41,13 +44,91 @@ async function loadFonts() {
   }
 }
 
+export async function fetchIndex(indexFile, sheet, pageSize = 1000) {
+  const idxKey = indexFile.concat(sheet || '');
+
+  const handleIndex = async (offset) => {
+    const sheetParam = sheet ? `&sheet=${sheet}` : '';
+
+    const resp = await fetch(`/${indexFile}.json?limit=${pageSize}&offset=${offset}${sheetParam}`);
+    const json = await resp.json();
+    const newIndex = {
+      complete: (json.limit + json.offset) === json.total,
+      offset: json.offset + pageSize,
+      promise: null,
+      data: [...window.index[idxKey].data, ...json.data],
+    };
+
+    return newIndex;
+  };
+
+  window.index = window.index || {};
+  window.index[idxKey] = window.index[idxKey] || {
+    data: [],
+    offset: 0,
+    complete: false,
+    promise: null,
+  };
+
+  if (window.index[idxKey].complete) {
+    return window.index[idxKey];
+  }
+
+  if (window.index[idxKey].promise) {
+    return window.index[idxKey].promise;
+  }
+
+  window.index[idxKey].promise = handleIndex(window.index[idxKey].offset);
+  const newIndex = await (window.index[idxKey].promise);
+  window.index[idxKey] = newIndex;
+
+  return newIndex;
+}
+
+const buildSideNavBlock = (main) => {
+  const { div } = domHelper;
+  const isSideNav = main.parentElement?.classList.contains('side-nav');
+  if (isSideNav) {
+    main.prepend(div(buildBlock('side-nav', { elems: [] })));
+  }
+};
+
+async function decorateTemplates(main) {
+  try {
+    const template = getMetadata('template');
+    const templates = ['side-nav'];
+
+    if (templates.includes(template)) {
+      const mod = await import(`../templates/${template}/${template}.js`);
+      await loadCSS(`${window.hlx.codeBasePath}/templates/${template}/${template}.css`);
+
+      if (mod.default) {
+        await mod.default(main);
+      }
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Decorate Templates failed', error);
+  }
+}
+
+function buildBreadcrumb(main) {
+  const { div } = domHelper;
+  const noBreadcrumb = getMetadata('no-breadcrumb');
+  if ((!noBreadcrumb || noBreadcrumb?.toLowerCase() !== 'true') && main.parentElement?.classList.contains('side-nav')) {
+    main.prepend(div(buildBlock('breadcrumb', { elems: [] })));
+  }
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
-    // buildHeroBlock(main);
+    buildSideNavBlock(main);
+    buildBreadcrumb(main);
+    buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -80,6 +161,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    await decorateTemplates(main);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }

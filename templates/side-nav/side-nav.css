@@ -1,0 +1,45 @@
+.side-nav main .section:not(.side-nav-container, .breadcrumb-container) a {
+  text-decoration: underline;
+  color: #000;
+  font-weight: bold;
+}
+
+.side-nav main .section:not(.side-nav-container, .breadcrumb-container) a:after {
+  font-family: 'FontAwesome';
+  content: "\f08e";
+  margin-left: 9px;
+  display: inline-block;
+}
+
+.side-nav section:not(.side-nav-container) a:hover {
+  text-decoration: none;
+}
+
+.side-nav main>.section:first-of-type {
+  /* max-width: 1200px; */
+  margin: auto;
+  padding: 0 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 40px;
+  /* margin: 40px 0; */
+}
+
+.side-nav main>div:not(.breadcrumb-container) {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+  /* gap: 3rem; */
+  /* margin-top: 40px; */
+  margin-bottom: 40px
+}
+
+@media (min-width: 1024px) {
+  .side-nav main>div:not(.breadcrumb-container) {
+    gap: 3rem;
+  }
+}
+
+
+
