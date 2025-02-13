@@ -32,7 +32,6 @@ function buildHierarchy(paths, currentPath) {
       // For root level, include all root paths
       return itemLevel === 1;
     }
-    // console.log(itemLevel, currentLevel + 1, itemLevel);
     const isSibling = itemLevel === currentLevel && item.path.startsWith(parentPath);
     const isChild = itemLevel === currentLevel + 1 && item.path.startsWith(parentPath);
     return isSibling || isChild;
@@ -96,7 +95,7 @@ function buildHierarchy(paths, currentPath) {
     }
   } else {
     return [{
-      // path: '/',
+      path: '/',
       title: 'Home',
       'breadcrumb-title': 'Home',
       child: undefined,

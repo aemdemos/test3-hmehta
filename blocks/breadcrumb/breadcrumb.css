@@ -45,10 +45,16 @@
   content: "⬅";
   position: absolute;
   left: 4px;
-  top: 69.5%;
+  margin-top: 25px;
   transform: translateY(-50%);
   font-size: 16px;
   margin-left: 16px;
+}
+
+main .section.breadcrumb-container {
+  margin: auto;
+  padding: 24px;
+  margin-bottom: 40px;
 }
 
 /* Desktop styles */
