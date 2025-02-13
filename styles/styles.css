@@ -19,8 +19,10 @@
     --text-color: #131313;
     --link-color: #3b63fb;
     --black-color: #000;
+    --white-color: #fff;
     --light-grey-color: #e0e0e0;
     --link-hover-color: #1d3ecf;
+    --navy-color: #02084b;
     --body-font-family: "Open Sans", "Open Sans Fallback", "sans-serif";
     --heading-font-family: "Zilla Slab", "Zilla Slab Fallback";
     --body-font-size-m: 16px;
@@ -317,6 +319,15 @@ main img {
 .icon img {
     height: 100%;
     width: 100%;
+}
+
+.block.blue-background {
+  background-color: var(--navy-color);
+  padding: 25px;
+}
+
+.block.blue-background * {
+  color: var(--background-color) !important;
 }
 
 /* sections */

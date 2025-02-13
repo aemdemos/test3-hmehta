@@ -1,13 +1,20 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { div, h1 } from '../../scripts/dom-helpers.js';
+import { buildBlock, decorateBlock } from '../../scripts/aem.js';
+import { div } from '../../scripts/dom-helpers.js';
 
 export default function decorate(block) {
   // Find breadcrumb section if it exists
   const breadcrumb = block.querySelector('.breadcrumb-container');
-  const breadcrumbTitle = getMetadata('breadcrumb-title');
-  breadcrumb.classList.add('grey-background');
-  breadcrumb.appendChild(div({ class: 'default-content-wrapper' }, h1(breadcrumbTitle)));
   const outDiv = div();
+
+  const tempDiv = div(buildBlock('side-nav', { elems: [] }));
+  if (tempDiv?.querySelector('div')) {
+    decorateBlock(tempDiv.querySelector('div'));
+  }
+  tempDiv.classList.add('side-nav-wrapper');
+  const newSideNavSection = div({ class: 'section side-nav-container',
+    'data-section-status': 'initialized' });
+  newSideNavSection.style.display = 'none';
+  newSideNavSection.appendChild(tempDiv);
 
   // Move all sections to wrapper div except breadcrumb
   const sections = block.querySelectorAll('.section');
@@ -17,7 +24,7 @@ export default function decorate(block) {
     }
   });
 
-  // console.log(output);
+  outDiv.prepend(newSideNavSection);
 
   // Clear the block and add breadcrumb (if exists) and wrapper div
   block.innerHTML = '';

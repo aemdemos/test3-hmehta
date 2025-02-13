@@ -15,19 +15,19 @@ import {
   getMetadata,
 } from './aem.js';
 
-import * as domHelper from './dom-helpers.js';
+import { div, h1, p } from './dom-helpers.js';
 
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
-  const h1 = main.querySelector('h1');
+  const h1Temp = main.querySelector('h1');
   const picture = main.querySelector('picture');
   // eslint-disable-next-line no-bitwise
-  if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
+  if (h1Temp && picture && (h1Temp.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
-    section.append(buildBlock('hero', { elems: [picture, h1] }));
+    section.append(buildBlock('hero', { elems: [picture, h1Temp] }));
     main.prepend(section);
   }
 }
@@ -85,18 +85,10 @@ export async function fetchIndex(indexFile, sheet, pageSize = 1000) {
   return newIndex;
 }
 
-const buildSideNavBlock = (main) => {
-  const { div } = domHelper;
-  const isSideNav = main.parentElement?.classList.contains('side-nav');
-  if (isSideNav) {
-    main.prepend(div(buildBlock('side-nav', { elems: [] })));
-  }
-};
-
 async function decorateTemplates(main) {
   try {
     const template = getMetadata('template');
-    const templates = ['side-nav'];
+    const templates = ['side-nav', 'news-article'];
 
     if (templates.includes(template)) {
       const mod = await import(`../templates/${template}/${template}.js`);
@@ -113,10 +105,19 @@ async function decorateTemplates(main) {
 }
 
 function buildBreadcrumb(main) {
-  const { div } = domHelper;
   const noBreadcrumb = getMetadata('no-breadcrumb');
-  if ((!noBreadcrumb || noBreadcrumb?.toLowerCase() !== 'true') && main.parentElement?.classList.contains('side-nav')) {
+  if ((!noBreadcrumb || noBreadcrumb?.toLowerCase() !== 'true')
+    && main.parentElement) {
     main.prepend(div(buildBlock('breadcrumb', { elems: [] })));
+    const breadcrumb = main.querySelector('div');
+    const breadcrumbTitle = getMetadata('breadcrumb-title');
+    breadcrumb.classList.add('grey-background');
+    const fromTheDepartment = getMetadata('from-the-department');
+    if (fromTheDepartment) {
+      breadcrumb.appendChild(div(p({ class: 'from-the-department' }, 'From the department'), h1(breadcrumbTitle)));
+    } else {
+      breadcrumb.appendChild(h1(breadcrumbTitle));
+    }
   }
 }
 
@@ -126,7 +127,6 @@ function buildBreadcrumb(main) {
  */
 function buildAutoBlocks(main) {
   try {
-    buildSideNavBlock(main);
     buildBreadcrumb(main);
     buildHeroBlock(main);
   } catch (error) {
