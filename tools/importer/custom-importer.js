@@ -12,19 +12,19 @@
 /* global WebImporter */
 /* eslint-disable no-console, class-methods-use-this */
 function setMetadata(meta, document, url) {
-	const date = document.querySelector('.news-article-date');
-	if (date) {
-		meta['publication-date'] = new Date(date.textContent).toISOString(); // todo piyush check again
-		date.remove();
-	}
-  
+  const date = document.querySelector('.news-article-date');
+  if (date) {
+    meta['publication-date'] = new Date(date.textContent).toISOString(); // todo piyush check again
+    date.remove();
+  }
+
   delete meta['og:title'];
   delete meta['og:description'];
 
-	const breadcrumbTitle = document.querySelector('.sws-content-header h1');
-	if (breadcrumbTitle) {
-		meta['breadcrumb-title'] = breadcrumbTitle.textContent;
-	}
+  const breadcrumbTitle = document.querySelector('.sws-content-header h1');
+  if (breadcrumbTitle) {
+    meta['breadcrumb-title'] = breadcrumbTitle.textContent;
+  }
 
   const fromTheDepartment = document.querySelector('.from-the-department');
   if (fromTheDepartment) {
@@ -36,13 +36,12 @@ function setMetadata(meta, document, url) {
   const pathname = urlObj?.pathname;
   if (pathname) {
     if (pathname.startsWith('/news')) {
-      meta['template'] = 'news-article';
+      meta.template = 'news-article';
     } else if (pathname.startsWith('/about-our-school')
-      || pathname.startsWith('/supporting-our-student'
+      || pathname.startsWith('/supporting-our-student')
       || pathname.startsWith('/learning-at-our-school')
-      || pathname.startsWith('/for-parents')
-      )) {
-      meta['template'] = 'side-nav';
+      || pathname.startsWith('/for-parents')) {
+      meta.template = 'side-nav';
     }
   }
 
@@ -72,7 +71,7 @@ const addCarouselItems = (main) => {
       carouselSlider.replaceWith(table);
     }
   }
-}
+};
 
 const addVideo = (main) => {
   const videos = main.querySelectorAll('.video');
@@ -89,7 +88,7 @@ const addVideo = (main) => {
       }
     });
   }
-}
+};
 
 export default {
   /**
@@ -123,16 +122,16 @@ export default {
       '.footer',
       'noscript',
       'script',
-			'#globalheader',
-			'.sws-global-quicklinks',
-			'.sws-news-article-wrapper-sidebar',
+      '#globalheader',
+      '.sws-global-quicklinks',
+      '.sws-news-article-wrapper-sidebar',
       '.local-footer',
       '.local-footer-message',
       '.gef-global-footer',
       '.gef-copyright-print',
       '#goog-gt-tt',
       '.sws-content__side-nav',
-      '#backtotop'
+      '#backtotop',
     ]);
 
     const meta = WebImporter.Blocks.getMetadata(document);
