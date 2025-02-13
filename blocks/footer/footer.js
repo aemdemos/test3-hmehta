@@ -16,5 +16,16 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  const sections = footer.querySelectorAll('.section');
+  if (sections.length > 0) {
+    sections[0].classList.add('local-footer');
+  }
+  if (sections.length > 1) {
+    sections[1].classList.add('local-footer-message');
+  }
+  if (sections.length > 2) {
+    sections[2].classList.add('global-footer');
+  }
+
   block.append(footer);
 }

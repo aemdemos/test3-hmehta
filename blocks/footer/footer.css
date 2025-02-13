@@ -13,61 +13,141 @@ footer .footer p {
     margin: 0;
 }
 
-footer .footer .section {
-    padding-top: 20px;
-    padding-bottom: 20px;
+footer .footer .local-footer {
+    padding: 20px 0 60px 0;
 }
 
-footer .footer .section:nth-of-type(1) > div:nth-child(1) {
+footer .footer .local-footer-message {
+    padding: 20px 0 30px 0;
+}
+footer .footer .local-footer h2 {
+    margin-top: 0.2rem;
+    font-size: 1.5rem;
+    line-height: 29px;
+    font-weight: 600;
+}
+
+footer .footer .local-footer h3 {
+    margin-top: 18px;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 19px;
+    font-weight: 700;
+}
+
+footer .footer .local-footer p {
+    margin-top: 8px;
+    font-size: .875rem;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.local-footer  p:nth-last-of-type(3)::before {
+    content: '\f095';
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+    margin-top: 3px;
+}
+
+footer .footer .local-footer p.button-container:nth-of-type(4) {
+    margin-top: 0;
+}
+
+footer .footer .local-footer p.button-container:nth-of-type(5) {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.local-footer .button-container a[href^="mailto"]::before {
+    content: '\f0e0';
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+}
+
+.local-footer .button-container a[href*="google.com/maps"]::before {
+    content: '\f041';
+    font-family: 'FontAwesome';
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+footer .footer .global-footer a {
+    font-size: .875rem;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+    text-decoration: none;
+    font-family: montserrat, Arial, sans-serif;
+}
+
+footer .footer .local-footer-message p {
+    font-size: .875rem;
+    line-height: normal;
+    font-weight: 400;
+}
+
+footer .footer .local-footer .default-content-wrapper {
     position: relative;
 }
 
-footer .footer .section:nth-of-type(1) > div:nth-child(1) > p:nth-child(1) {
+footer .footer .local-footer .default-content-wrapper p:nth-child(1) {
     position: absolute;
     right: 0;
 }
 
-footer .footer .section:nth-of-type(1) img {
+footer .footer .local-footer img {
     width: 130px;
     height: auto;
 }
 
-footer .footer .section:nth-of-type(3) img {
+footer .footer .global-footer img {
     width: 170px;
     height: auto;
 }
 
-footer .footer .section:nth-of-type(2) {
+footer .footer .local-footer-message {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
 }
 
-footer .footer ul {
+footer .footer .global-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    padding: 1.5rem 2.5rem 2.5rem 0;
+}
+
+footer .footer .global-footer .default-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+footer .footer .global-footer picture {
+    flex-shrink: 0;
+    position: relative;
+    padding-left: 1rem;
+    margin-top: -1rem;
+    top: -1rem;      
+}
+
+footer .footer .global-footer ul {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 130px));  /* Limited width of columns */
+    grid-template-rows: repeat(2, auto);
+    gap: 0.625rem 5.625rem;  /* Increased gap: 20px vertical, 40px horizontal */
     list-style: none;
     padding: 0;
+    margin: 0;
+    margin-right: 2.5rem;
 }
 
-footer .footer div > ul > li {
-    margin-bottom: 10px;
+footer .footer .global-footer ul li a {
+    display: block;  /* Makes the link take full width of li */
+    word-wrap: break-word;  /* Ensures words break and wrap */
 }
 
-footer .footer div > ul > li > ul {
-    margin-top: 0;
-}
-
-footer .footer .section:nth-of-type(3) > div {
-    display: flex;
-    justify-content: space-between;
-}
-
-footer .footer .section:nth-of-type(3) > div > ul {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    margin-left: 180px;
-}
-
-footer .footer .section:nth-of-type(3) > div > ul > li {
-    flex-basis: 177px;
-    margin-left: 30px;
-}
