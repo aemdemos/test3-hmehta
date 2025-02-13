@@ -76,7 +76,9 @@
     justify-content: center;
     gap: 20px;
     align-items: stretch;
-}
+    width: 100%;  /* Ensure full width */
+    margin-top: 20px;  /* Add some space after divider */
+  }
 
 .news-cards>ul {
     list-style: none;
@@ -105,3 +107,399 @@
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
+
+.news-more-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #666;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 40%;
+    
+    /* Font styling from theme */
+    font-family: "Zilla Slab";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.38;
+  }
+  
+  .news-more-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .news-more-button {
+      width: 100%;
+    }
+  }
+
+.news-view-more .sws-loader-svg-1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+}
+
+.news-filter-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.sws-advance-search__text {
+  font-family: "Zilla Slab";
+  font-size: 1rem;
+}
+
+.sws-advance-search__select {
+  padding: 0.5rem;
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-family: "Open Sans", sans-serif;
+  min-width: 200px;
+}
+
+.news-filter-button {
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #666;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "Zilla Slab";
+  font-size: 1rem;
+}
+
+.news-filter-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .news-filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .sws-advance-search__select {
+    width: 100%;
+  }
+}
+
+.news-filter-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .sws-advance-search__text {
+    white-space: nowrap;
+  }
+  
+  .sws-advance-search__select {
+    padding: 0.5rem;
+    border: 1px solid #666;
+    border-radius: 4px;
+    min-width: 150px;
+  }
+  
+  .news-filter-button {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #666;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .news-filter-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .news-filter-container {
+      flex-wrap: wrap;
+    }
+    
+    .sws-advance-search__select {
+      flex: 1;
+    }
+  }
+ 
+
+/* Main dropdown container */
+.sws-advance-search__select {
+    /* Primary container styles */
+    display: inline-block;
+    width: 300px;
+    min-width: 140px;
+    height: 39px;
+    position: relative;
+    
+    /* Margins and padding */
+    margin: 10px 5px;
+    
+    /* Border styles */
+    border: 1px solid rgb(2, 8, 75);
+    border-radius: 24px;
+    
+    /* Font styles */
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    color: rgb(0, 0, 0);
+    
+    /* Text adjustments */
+    text-size-adjust: 100%;
+    unicode-bidi: isolate;
+  
+    /* Center alignment */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Dropdown select element */
+  .sws-advance-search__select select {
+    /* Basic layout */
+    display: inline-block;
+    width: 300px;
+    height: 39px;
+    box-sizing: border-box;
+    
+    /* Appearance */
+    appearance: none;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    
+    /* Border and outline */
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    
+    /* Padding */
+    padding: 10px 30px;
+    
+    /* Font styles */
+    font-family: "Zilla Slab";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgb(0, 0, 0);
+    
+    /* Text properties */
+    text-align: center; /* Center the text */
+    text-transform: none;
+    white-space: nowrap;
+    
+    /* Overflow handling */
+    overflow-x: visible;
+    overflow-y: visible;
+    
+    /* Remove margins */
+    margin: 0;
+  
+    /* Center alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Dropdown options */
+  .sws-advance-search__select option {
+    /* Layout */
+    display: block;
+    width: auto;
+    height: auto;
+    min-height: 19.2px;
+    
+    /* Padding */
+    padding: 0 2px 1px;
+    
+    /* Font styles */
+    font-family: "Zilla Slab";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgb(0, 0, 0);
+    
+    /* Text properties */
+    text-align: left;
+    text-transform: none;
+    white-space: nowrap;
+    
+    /* Interaction */
+    cursor: pointer;
+  }
+  
+  /* Existing button and label styles remain unchanged */
+  .news-filter-button {
+    display: inline-block;
+    width: 100px;
+    max-width: 100px;
+    height: 41px;
+    margin: 0 0 0 30px;
+    padding: 10px 15px;
+    background-color: rgb(2, 8, 75);
+    color: rgb(255, 255, 255);
+    font-family: "Zilla Slab";
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  .sws-advance-search__text {
+    display: inline;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    color: rgb(0, 0, 0);
+    margin: 0 10px;
+    text-size-adjust: 100%;
+  }
+
+/* Prevent ALL color changes on hover */
+.news-filter-button,
+.news-filter-button:hover,
+.news-filter-button:focus,
+.news-filter-button:active,
+.news-filter-button:visited {
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(2, 8, 75) !important;
+  border-color: transparent !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+.sws-advance-search__select,
+.sws-advance-search__select:hover,
+.sws-advance-search__select:focus,
+.sws-advance-search__select:active,
+.sws-advance-search__select option:hover,
+.sws-advance-search__select option:focus,
+.sws-advance-search__select option:active {
+  color: rgb(0, 0, 0) !important;
+  background-color: rgb(255, 255, 255) !important;
+  border-color: rgb(2, 8, 75) !important;
+}
+
+.news-card,
+.news-card:hover,
+.news-card:focus,
+.news-card:active,
+.news-card:visited,
+.news-card *,
+.news-card *:hover,
+.news-card *:focus,
+.news-card *:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.news-more-button,
+.news-more-button:hover,
+.news-more-button:focus,
+.news-more-button:active,
+.news-more-button:visited {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
+/* No results container */
+.news-no-results-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 24px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    color: rgb(0, 0, 0);
+    text-size-adjust: 100%;
+    unicode-bidi: isolate;
+  }
+  
+  /* No results message */
+  .news-no-results-message {
+    display: block;
+    width: 832.898px;
+    height: 24px;
+    margin: 0 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    color: rgb(0, 0, 0);
+    text-size-adjust: 100%;
+    unicode-bidi: isolate;
+  }
+  
+
+
+  /* Update the divider CSS */
+  .news-content-divider-container {
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    display: block;
+    flex: 0 0 auto;
+    float: left;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 12px;
+    letter-spacing: 0.16px;
+    line-height: 24px;
+    margin: 0;
+    padding-left: 0;
+    width: 1200px;
+  }
+  
+  .news-content-divider-line {
+    border: none;
+    border-top: 2px solid #d8d8d8;
+    box-sizing: content-box;
+    clear: both;
+    color: rgb(0, 0, 0);
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 0;
+    letter-spacing: 0.16px;
+    line-height: 24px;
+    margin: 10px 0 0 0;
+    overflow: hidden;
+    padding: 0 10px;
+    width: 1180px;
+  }
+  
+  /* Ensure content section maintains layout */
+  .news-content-section {
+    width: 100%;
+    display: block;
+    clear: both;  /* Clear any floats */
+  }
+  
+  /* Maintain existing card grid layout */
+  
