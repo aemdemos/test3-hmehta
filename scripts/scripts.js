@@ -95,8 +95,8 @@ const buildSideNavBlock = (main) => {
 
 async function decorateTemplates(main) {
   try {
-    const template = getMetadata('template');
-    const templates = ['side-nav'];
+    const template = getMetadata('template').toLowerCase();
+    const templates = ['side-nav','news-landing'];
 
     if (templates.includes(template)) {
       const mod = await import(`../templates/${template}/${template}.js`);
