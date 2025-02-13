@@ -2,17 +2,17 @@ import { getMetadata, buildBlock, loadBlock, decorateBlock } from '../../scripts
 import { div, h1 } from '../../scripts/dom-helpers.js';
 
 export default function decorate(block) {
-   loadNews(block);
+  loadNews(block);
 
 }
 
 
-async function loadNewsBlock(block,matchingItems) {
-    const cardsBlock = buildBlock('cards',matchingItems);
-    block.append(cardsBlock);
-    decorateBlock(cardsBlock);
-    const newsBlock = await loadBlock(cardsBlock);
-  }
+async function loadNewsBlock(block, matchingItems) {
+  const cardsBlock = buildBlock('news-cards', matchingItems);
+  block.append(cardsBlock);
+  decorateBlock(cardsBlock);
+  const newsBlock = await loadBlock(cardsBlock);
+}
 
 /**
  * 
@@ -20,11 +20,11 @@ async function loadNewsBlock(block,matchingItems) {
  */
 async function createNewsBlock(block, matchingItems) {
 
-    const newsBlock = await loadBlock(decorateBlock(buildBlock('cards',matchingItems)));
+  const newsBlock = await loadBlock(decorateBlock(buildBlock('cards', matchingItems)));
 
-    block.textContent = '';
-    block.append(newsBlock);
-    
+  block.textContent = '';
+  block.append(newsBlock);
+
 }
 
 
@@ -35,61 +35,56 @@ async function createNewsBlock(block, matchingItems) {
  * @returns {Promise<Array>} Matching news items
  */
 async function fetchNewsItems(currentPath) {
-    try {
-      const response = await fetch('/query-index.json');
-      const queryData = await response.json();
-      
-      // Normalize current path (lowercase and remove .html)
-      const normalizedPath = currentPath.toLowerCase().replace('.html', '');
-      
-      // Find matching items
-      const formattedItems = queryData.data.map(item => [{
-        elems: [
-          // 1. Image (if exists)
-          item.image ? `<div class="news-card-image"><img src="${item.image}" alt="${item.title}"></div>` : '',
-          
-          // 2. Title
-          `<div class="news-card-title">${item.title || ''}</div>`,
-          
-          // 3. Description
-          `<div class="news-card-description">${item.description || ''}</div>`,
-          
-          // 4. Publication date (if exists)
-          item['publication-date'] ? `<div class="news-card-date">${item['publication-date']}</div>` : '',
-          
-          // 5. Read More link
-          `<div class="news-card-link"><a href="${item.path}">Read More</a></div>`
-        ]
-      }]);
-  
-  
-      console.log('Formatted for buildBlock:', formattedItems);
-      return formattedItems;
-    } catch (error) {
-      console.error('Error fetching news items:', error);
-      return [];
-    }
-  }
+  try {
+    const response = await fetch('/query-index.json');
+    const queryData = await response.json();
 
-  /**
-   * 
-   */
+    // Normalize current path (lowercase and remove .html)
+    const normalizedPath = currentPath.toLowerCase().replace('.html', '');
+
+    // Find matching items
+    const formattedItems = queryData.data.map(item => [`
+      <a href="${item.path}" class="news-card">
+        <img class="news-card-image" src=${item.image || "/for-parents/media_14d486ea46814365c71f7d6d83b417e682cf318f9.jpeg"} alt="${item.title}"/>
+        <div class="news-card-content">
+          <div class="news-card-category">/ News category</div>
+          <h3 class="news-card-title">${item.title || ''}</h3>
+          <div class="news-card-date">21 Oct 2024</div>
+          <div class="news-card-description">${getTrimmedDescription(item.description || '')}</div>
+        </div>
+      </a>
+      `]);
+    console.log('Formatted for buildBlock:', formattedItems);
+    return formattedItems;
+  } catch (error) {
+    console.error('Error fetching news items:', error);
+    return [];
+  }
+}
+
+
+const getTrimmedDescription = (description) => {
+  const maxLength = 138;
+  if (description.length > maxLength) {
+    return description.substring(0, maxLength-3) + '...';
+  }
+  return description;
+}
 
 async function loadNews(block) {
-    const currentPath = window.location.pathname;
-  
-    try {
-      // 1. Fetch matching news items
-      const matchingItems = await fetchNewsItems(currentPath);
+  const currentPath = window.location.pathname;
 
-      await loadNewsBlock(block, matchingItems);
+  try {
+    // 1. Fetch matching news items
+    const matchingItems = await fetchNewsItems(currentPath);
 
-      // 2. Create news landing page
+    await loadNewsBlock(block, matchingItems);
 
-      // 3. Replace block content with news landing
+    // 2. Create news landing page
 
-    } catch (error) {
-        console.error('Error in news block decoration:', error);
-    }
+    // 3. Replace block content with news landing
+
+  } catch (error) {
+    console.error('Error in news block decoration:', error);
+  }
 }
-      
