@@ -18,7 +18,7 @@ export default async function decorate(block) {
   let latestNewsData = await latestNews.json();
   latestNewsData = latestNewsData.data.filter((item) => item.template === 'news-article')
     .sort((x, y) => new Date(y['publication-date']) - new Date(x['publication-date']))
-    .slice(0, 5);
+    .slice(0, 10);
   const ulTemp = ul();
   latestNewsData.forEach((item) => {
     // create li having a having breadcrumb-title as link and publication-date
