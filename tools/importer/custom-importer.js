@@ -14,7 +14,17 @@
 function setMetadata(meta, document, url) {
   const date = document.querySelector('.news-article-date');
   if (date) {
-    meta['publication-date'] = new Date(date.textContent).toISOString(); // todo piyush check again
+    const parsedDate = new Date(date.textContent);
+    const utcDate = new Date(Date.UTC(
+      parsedDate.getFullYear(),
+      parsedDate.getMonth(),
+      parsedDate.getDate(),
+      0,
+      0,
+      0,
+      0,
+    ));
+    meta['publication-date'] = utcDate.toISOString();
     date.remove();
   }
 
@@ -31,12 +41,18 @@ function setMetadata(meta, document, url) {
     meta['from-the-department'] = true;
   }
 
-  // url = document.URL;
   const urlObj = new URL(url);
   const pathname = urlObj?.pathname;
+
   if (pathname) {
     if (pathname.startsWith('/news')) {
-      meta.template = 'news-article';
+      const isNewsLanding = document.querySelector('.news-list');
+      if (isNewsLanding) {
+        meta.template = 'news-landing';
+      } else {
+        meta.template = 'news-article';
+      }
+      isNewsLanding?.remove();
     } else if (pathname.startsWith('/about-our-school')
       || pathname.startsWith('/supporting-our-student')
       || pathname.startsWith('/learning-at-our-school')
@@ -77,10 +93,8 @@ const addVideo = (main) => {
   const videos = main.querySelectorAll('.video');
   if (videos?.length) {
     videos.forEach((video) => {
-      // console.log(video);
       const cells = [['Video']];
       const iframeSrc = video?.querySelector('iframe')?.src;
-      // console.log(iframeSrc);
       if (iframeSrc) {
         cells.push([iframeSrc]);
         const table = WebImporter.DOMUtils.createTable(cells, document);
@@ -106,7 +120,6 @@ export default {
   }) => {
     // define the main element: the one that will be transformed to Markdown
     const main = document.body;
-    console.log(params);
 
     WebImporter.DOMUtils.remove(document, [
       'script[src*="https://solutions.invocacdn.com/js/invoca-latest.min.js"]',
