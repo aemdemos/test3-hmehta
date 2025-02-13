@@ -45,13 +45,23 @@ async function fetchNewsItems(currentPath) {
       // Find matching items
       const formattedItems = queryData.data.map(item => [{
         elems: [
-          `<div class="card-title">${item.title || ''}</div>`,
-          `<div class="card-description">${item.description || ''}</div>`,
-          item.image ? `<div class="card-image"><img src="${item.image}" alt="${item.title}"></div>` : '',
-          item['publication-date'] ? `<div class="card-date">${item['publication-date']}</div>` : '',
-          `<div class="card-link"><a href="${item.path}">Read More</a></div>`
+          // 1. Image (if exists)
+          item.image ? `<div class="news-card-image"><img src="${item.image}" alt="${item.title}"></div>` : '',
+          
+          // 2. Title
+          `<div class="news-card-title">${item.title || ''}</div>`,
+          
+          // 3. Description
+          `<div class="news-card-description">${item.description || ''}</div>`,
+          
+          // 4. Publication date (if exists)
+          item['publication-date'] ? `<div class="news-card-date">${item['publication-date']}</div>` : '',
+          
+          // 5. Read More link
+          `<div class="news-card-link"><a href="${item.path}">Read More</a></div>`
         ]
       }]);
+  
   
       console.log('Formatted for buildBlock:', formattedItems);
       return formattedItems;
