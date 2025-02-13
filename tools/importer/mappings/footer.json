@@ -1,5 +1,5 @@
 {
-  "url": "https://fortstreet-p.schools.nsw.gov.au/",
+  "url": "https://fortstreet-p.schools.nsw.gov.au/news/2024.html",
   "browserOptions": {
     "width": 1280,
     "disableJS": false,
@@ -10,10 +10,10 @@
   },
   "autoDetect": true,
   "template": {
-    "raw": "/html[1]/body[1]/div[1]\n  /html[1]/body[1]/div[7]\n  /html[1]/body[1]/header[1]\n  - /html[1]/body[1]/header[1]/div[1]/div[1]/a[1]/img[1]\n  - /html[1]/body[1]/header[1]/div[1]/div[1]/div[1]\n  /html[1]/body[1]/div[8]\n  - /html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[1]\n  - /html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[2]\n  - /html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[3]\n  - /html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[4]\n  - /html[1]/body[1]/div[8]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[5]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/div[1]\n  - /html[1]/body[1]/main[1]/div[2]\n  - /html[1]/body[1]/main[1]/div[3]\n  /html[1]/body[1]/div[9]\n  - /html[1]/body[1]/div[9]/div[1]/h2[1]\n  - /html[1]/body[1]/div[9]/div[1]/div[1]\n  /html[1]/body[1]/div[10]\n  /html[1]/body[1]/aside[1]\n  - /html[1]/body[1]/aside[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/aside[1]/div[1]",
-    "hash": -428229619
+    "raw": "/html[1]/body[1]/div[1]\n  /html[1]/body[1]/div[3]\n  /html[1]/body[1]/header[1]\n  - /html[1]/body[1]/header[1]/div[1]/div[1]/a[1]/img[1]\n  - /html[1]/body[1]/header[1]/div[1]/div[1]/div[1]\n  /html[1]/body[1]/div[4]\n  - /html[1]/body[1]/div[4]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[1]\n  - /html[1]/body[1]/div[4]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[2]\n  - /html[1]/body[1]/div[4]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[3]\n  - /html[1]/body[1]/div[4]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[4]\n  - /html[1]/body[1]/div[4]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[5]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/div[1]\n  - /html[1]/body[1]/main[1]/div[2]\n  /html[1]/body[1]/div[5]\n  - /html[1]/body[1]/div[5]/div[1]/h2[1]\n  - /html[1]/body[1]/div[5]/div[1]/div[1]\n  /html[1]/body[1]/div[6]\n  /html[1]/body[1]/aside[1]\n  - /html[1]/body[1]/aside[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/aside[1]/div[1]",
+    "hash": 1211651670
   },
-  "pageHeight": 3488,
+  "pageHeight": 2518,
   "mapping": [
     {
       "id": "footer-1",
@@ -34,9 +34,9 @@
                 "numRows": 1
               },
               "x": 0,
-              "y": 3323,
+              "y": 2353,
               "mapping": "footer",
-              "customBlockName": "aifooter-u4i0gy-box-id-437629947"
+              "customBlockName": "aifooter-pduqyp-437629947"
             }
           ]
         }
