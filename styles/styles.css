@@ -18,6 +18,7 @@
     --dark-color: #505050;
     --text-color: #131313;
     --link-color: #3b63fb;
+    --black-color: #000;
     --light-grey-color: #e0e0e0;
     --link-hover-color: #1d3ecf;
     --body-font-family: "Open Sans", "Open Sans Fallback", "sans-serif";
@@ -25,13 +26,20 @@
     --body-font-size-m: 16px;
     --body-font-size-s: 18px;
     --body-font-size-xs: 16px;
-    --heading-font-size-xxl: 16px;
+    --heading-font-size-xxl: 36px;
     --heading-font-size-xl: 26px;
     --heading-font-size-l: 20px;
     --heading-font-size-m: 16px;
     --heading-font-size-s: 18px;
     --heading-font-size-xs: 16px;
     --nav-height: 350px;
+
+    /* font weights */
+    --font-weight-small: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-bolder: 900;
 }
 
 /* fallback fonts */
@@ -150,7 +158,7 @@
         --body-font-size-m: 16px;
         --body-font-size-s: 18px;
         --body-font-size-xs: 16px;
-        --heading-font-size-xxl: 16px;
+        --heading-font-size-xxl: 36px;
         --heading-font-size-xl: 26px;
         --heading-font-size-l: 20px;
         --heading-font-size-m: 16px;

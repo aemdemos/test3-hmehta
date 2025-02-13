@@ -50,12 +50,12 @@
 }
 
 .block.side-nav .first-level-li.expanded > a:not(.expand-collapse) {
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   text-decoration: underline;
 }
 
 .block.side-nav .first-level-li.selected > a:not(.expand-collapse) {
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   text-decoration: underline;
 }
 
@@ -71,7 +71,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   margin-left: 16px;
 }
 
@@ -112,14 +112,14 @@
   transition: transform 0.3s ease;
   transform-origin: center;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 .block.side-nav .first-level-li.expanded .expand-collapse {
   transform: rotate(45deg);
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .block.side-nav {
     display: block;
   }

@@ -1,10 +1,12 @@
+import { a, div, li } from '../../scripts/dom-helpers.js';
+
 /**
  * Builds a breadcrumb trail from current path to root
  * @param {Element} block The breadcrumb block element
  */
 export default async function decorate(block) {
   const currentPath = window.location.pathname;
-  const paths = currentPath.split('/').filter(Boolean);
+  const paths = currentPath?.split('/').filter(Boolean);
   const breadcrumbs = [];
 
   // Fetch metadata from query-index
@@ -28,42 +30,36 @@ export default async function decorate(block) {
   nav.setAttribute('aria-label', 'Breadcrumb');
 
   // Create mobile version (Back button)
-  const mobileNav = document.createElement('div');
-  mobileNav.className = 'breadcrumb-mobile';
-  const backButton = document.createElement('a');
+  const mobileNav = div({ class: 'breadcrumb-mobile' });
+  const backButton = a();
   backButton.href = breadcrumbs.length > 0
     ? breadcrumbs[breadcrumbs.length - 2]?.path || '/'
     : '/';
-  backButton.innerHTML = '← Back';
+  backButton.innerHTML = 'Back';
   mobileNav.appendChild(backButton);
   nav.appendChild(mobileNav);
 
   // Create desktop version (full breadcrumb)
-  const desktopNav = document.createElement('div');
-  desktopNav.className = 'breadcrumb-desktop';
+  const desktopNav = div({ class: 'breadcrumb-desktop' });
   const list = document.createElement('ul');
 
   // Add home link
-  const homeLi = document.createElement('li');
-  const homeLink = document.createElement('a');
-  homeLink.href = '/';
-  homeLink.textContent = 'Home';
+  const homeLi = li();
+  const homeLink = a({ href: '/' }, 'Home');
   homeLi.appendChild(homeLink);
   list.appendChild(homeLi);
 
   // Add remaining breadcrumbs
   breadcrumbs.forEach((crumb, index) => {
-    const li = document.createElement('li');
+    const tempLi = li();
     if (index === breadcrumbs.length - 1) {
-      li.textContent = crumb.text;
-      li.setAttribute('aria-current', 'page');
+      tempLi.textContent = crumb.text;
+      tempLi.setAttribute('aria-current', 'page');
     } else {
-      const a = document.createElement('a');
-      a.href = crumb.path;
-      a.textContent = crumb.text;
-      li.appendChild(a);
+      const tempA = a({ href: crumb.path }, crumb.text);
+      tempLi.appendChild(tempA);
     }
-    list.appendChild(li);
+    list.appendChild(tempLi);
   });
 
   desktopNav.appendChild(list);
