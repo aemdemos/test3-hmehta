@@ -1,10 +1,11 @@
+/* Base footer styles */
 footer {
     background-color: #eaeaea;
     font-size: var(--body-font-size-xs);
     border-top: 3.6px solid #02084b;
 }
 
-footer .footer>div>.section>div {
+footer .footer > div > .section > div {
     margin: auto;
     max-width: 1200px;
 }
@@ -13,6 +14,7 @@ footer .footer p {
     margin: 0;
 }
 
+/* Local footer section */
 footer .footer .local-footer {
     padding: 30px 0 30px 0;
 }
@@ -21,16 +23,9 @@ footer .footer .local-footer img {
     display: none;
 }
 
-footer .footer .local-footer div {
-    padding-left: 1rem;
-}
-
+footer .footer .local-footer div,
 footer .footer .local-footer-message div {
     padding-left: 1rem;
-}
-
-footer .footer .local-footer-message {
-    padding: 30px 0 30px 0;
 }
 
 footer .footer .local-footer h2 {
@@ -48,13 +43,21 @@ footer .footer .local-footer h3 {
     font-weight: 700;
 }
 
-footer .footer .local-footer p {
-    margin-top: 8px;
+/* Local footer message section */
+footer .footer .local-footer-message {
+    padding: 30px 0 30px 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+footer .footer .local-footer p,
+footer .footer .local-footer-message p {
     font-size: .875rem;
     line-height: normal;
     font-weight: 400;
 }
 
+/* Icon styles */
 .local-footer .default-content-wrapper p:nth-last-of-type(3)::before {
     content: '\f095';
     font-family: 'FontAwesome';
@@ -78,6 +81,7 @@ footer .footer .local-footer p.button-container:nth-of-type(5) {
     font-weight: 500;
 }
 
+/* Mobile elements section */
 footer .footer .local-footer .mobile-elements {
     padding: 0.75rem;
     padding-top: 1rem;
@@ -120,12 +124,6 @@ footer .footer .local-footer .hide-mobile {
     display: none;
 }
 
-footer .footer .local-footer-message p {
-    font-size: .875rem;
-    line-height: normal;
-    font-weight: 400;
-}
-
 footer .footer .local-footer .default-content-wrapper {
     position: relative;
 }
@@ -135,13 +133,7 @@ footer .footer .local-footer .default-content-wrapper p:nth-child(1) {
     right: 0;
 }
 
-
-footer .footer .local-footer-message {
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-}
-
-
+/* Global footer section */
 footer .footer .global-footer {
     display: flex;
     flex-direction: column;
@@ -187,8 +179,8 @@ footer .footer .global-footer img {
     height: auto;
 }
 
-
-@media (width >=768px) {
+/* Media Queries */
+@media (width >= 768px) {
     footer .footer .local-footer .mobile-elements {
         display: none;
     }
@@ -196,7 +188,6 @@ footer .footer .global-footer img {
     footer .footer .local-footer .hide-mobile {
         display: block;
     }
-
 
     .local-footer .button-container a[href*="google.com/maps"]::before {
         content: '\f041';
@@ -250,32 +241,29 @@ footer .footer .global-footer img {
         font-family: montserrat, Arial, sans-serif;
         letter-spacing: .03em;
     }
-
 }
 
-@media (width >=1024px) {
-
-    footer .footer .local-footer img {
-        display: block;
-    }
-
-    footer .footer .global-footer img {
-        width: 170px;
-        height: auto;
-    }
-
-    footer .footer .local-footer img {
-        width: 130px;
-        height: auto;
-    }
-
-
+@media (width >= 1024px) {
     footer .footer .global-footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: #ddd;
         padding: 1.5rem 2.5rem 2.5rem 0;
+    }
+
+    footer .footer .global-footer img,
+    footer .footer .local-footer img {
+        display: block;
+        height: auto;
+    }
+
+    footer .footer .global-footer img {
+        width: 170px;
+    }
+
+    footer .footer .local-footer img {
+        width: 130px;
     }
 
     footer .footer .global-footer .default-content-wrapper {
@@ -291,7 +279,6 @@ footer .footer .global-footer img {
         flex-shrink: 0;
         padding-left: 1rem;
         order: -1;
-        /* Ensures picture comes first */
         margin-top: -0.2rem;
     }
 
@@ -309,9 +296,7 @@ footer .footer .global-footer img {
 
     footer .footer .global-footer ul li a {
         display: block;
-        /* Makes the link take full width of li */
         word-wrap: break-word;
-        /* Ensures words break and wrap */
     }
 
     footer .footer .global-footer a {
@@ -323,5 +308,4 @@ footer .footer .global-footer img {
         font-family: montserrat, Arial, sans-serif;
         letter-spacing: 0.42px;
     }
-
 }
