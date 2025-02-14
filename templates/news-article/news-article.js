@@ -43,7 +43,7 @@ export default async function decorate(block) {
   sections.forEach((section) => {
     if (!section.classList.contains('breadcrumb-container')) {
       section.querySelector('.default-content-wrapper')
-        ?.prepend(p(formatDate(getMetadata('publication-date'))));
+        ?.prepend(p({ class: 'publication-date' }, formatDate(getMetadata('publication-date'))));
       outDiv.appendChild(section);
     }
   });

@@ -97,6 +97,7 @@
 
 .block.side-nav .second-level-li:last-child {
   border-bottom: none;
+  margin-bottom: 0;
 }
 
 .block.side-nav .expand-collapse {

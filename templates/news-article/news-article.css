@@ -54,6 +54,10 @@
   content: "";
 }
 
+.news-article .publication-date {
+  margin-top: 0;
+}
+
 @media (width >= 1024px) {
   .news-article main>div:not(.breadcrumb-container) {
     gap: 3rem;

@@ -45,7 +45,7 @@ function setMetadata(meta, document, url) {
   const pathname = urlObj?.pathname;
 
   if (pathname) {
-    if (pathname.startsWith('/news')) {
+    if (pathname.startsWith('/news') && !pathname.startsWith('/newsletter')) {
       const isNewsLanding = document.querySelector('.news-list');
       if (isNewsLanding) {
         meta.template = 'news-landing';
