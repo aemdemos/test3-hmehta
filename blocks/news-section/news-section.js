@@ -198,12 +198,17 @@ const buildData = (items) => {
   items.forEach((item) => {
     const row = [];
     const cardBody = item['path'] ? document.createElement('a') : document.createElement('div');
+    cardBody.classList.add('news-card');
+    const cardContent = document.createElement('div');
+    cardContent.classList.add('news-card-content');
+    cardBody.appendChild(cardContent);
     const fields = ['path', 'image', 'title', 'description', 'lastModified'];
     fields.forEach((fieldName) => {
       if (fieldName === 'path') {
         cardBody.href = item[fieldName];
       } else if (fieldName === 'image') {
         const cardImage = createOptimizedPicture(item[fieldName] === "0" ? DEFAULT_IMAGE : item[fieldName]);
+        cardImage.children[3].classList.add('news-card-image');
         if (cardImage) {
           const pathImg = document.createElement('a');
           pathImg.href = item.path;
@@ -224,7 +229,7 @@ const buildData = (items) => {
         } else {
           div.textContent = item[fieldName];
         }
-        cardBody.appendChild(div);
+        cardContent.appendChild(div);
       }
     });
 
@@ -290,10 +295,10 @@ export default async function decorate(block) {
     // Create filter and content sections
     const filterSection = createFilterSection();
     const contentSection = document.createElement('div');
-    contentSection.className = 'news-content-section';
+    contentSection.className = 'news-cards';
 
     const newsContentContainer = document.createElement('div');
-    newsContentContainer.className = 'news-content-container';
+    newsContentContainer.className = 'news-cards';
 
     // Initialize state
     let currentPage = 1;
