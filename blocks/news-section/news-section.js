@@ -1,4 +1,4 @@
-import { buildBlock, loadBlock } from '../../scripts/aem.js';
+import { buildBlock, loadBlock, createOptimizedPicture, getFormattedDate } from '../../scripts/aem.js';
 
 // Constants
 const ITEMS_PER_PAGE = 6;
@@ -10,7 +10,7 @@ const DESCRIPTION_MAX_LENGTH = 138;
  */
 function getFilterFromURL() {
   const url = new URL(window.location.href);
-  
+
   const filterParam = url.searchParams.get('filterParam');
   if (filterParam) {
     const filterMap = {
@@ -21,10 +21,10 @@ function getFilterFromURL() {
     };
     return filterMap[decodeURIComponent(filterParam)] || 'all';
   }
-  
+
   const pathMatch = url.pathname.match(/\/news\/(\d{4})\.html$/);
   if (pathMatch) return pathMatch[1];
-  
+
   return 'all';
 }
 
@@ -50,29 +50,11 @@ function updateURL(filterValue) {
   }
 }
 
-/**
- * Creates news card HTML structure
- * @param {Object} item - News item data
- * @returns {string} HTML string for news card
- */
-function createNewsCardHTML(item) {
-  return `
-    <a href="${item.path}" class="news-card">
-      <img class="news-card-image" src="${item.image || DEFAULT_IMAGE}" alt="${item.title}"/>
-      <div class="news-card-content">
-        <div class="news-card-category">/ News category</div>
-        <h3 class="news-card-title">${item.title || ''}</h3>
-        <div class="news-card-date">21 Oct 2024</div>
-        <div class="news-card-description">${getTrimmedDescription(item.description || '')}</div>
-      </div>
-    </a>`;
-}
-
 function getTrimmedDescription(description) {
-  if (description.length > DESCRIPTION_MAX_LENGTH) {
+  if (description && description.length > DESCRIPTION_MAX_LENGTH) {
     return description.substring(0, DESCRIPTION_MAX_LENGTH - 3) + '...';
   }
-  return description;
+  return description || "";
 }
 
 // ... keep other utility functions (createFilterSection, createLoadingIndicator, etc.) ...
@@ -106,9 +88,8 @@ async function fetchNewsItems(filterValue = 'all') {
   try {
     const response = await fetch('/query-index.json');
     const { data } = await response.json();
-    
-    const filteredData = filterNewsItems(data, filterValue);
-    return filteredData.map(item =>  createNewsCardHTML(item) );
+
+    return filterNewsItems(data, filterValue);
   } catch (error) {
     console.error('Error fetching news items:', error);
     return [];
@@ -143,14 +124,14 @@ function createFilterButton(onFilterChange) {
   const button = document.createElement('button');
   button.className = 'news-filter-button';
   button.textContent = 'Go';
-  
+
   button.addEventListener('click', () => {
     const select = document.querySelector('#filterOption');
     const selectedValue = select.value;
     updateURL(selectedValue);
     onFilterChange(selectedValue);
   });
-  
+
   return button;
 }
 
@@ -161,11 +142,11 @@ function createFilterButton(onFilterChange) {
 function createNoResultsMessage() {
   const noResultsContainer = document.createElement('div');
   noResultsContainer.className = 'news-no-results-container';
-  
+
   const noResultsMessage = document.createElement('div');
   noResultsMessage.className = 'news-no-results-message';
   noResultsMessage.textContent = "We didn't find anything that matches your filters. Try expanding your search or browsing the whole collection.";
-  
+
   noResultsContainer.appendChild(noResultsMessage);
   return noResultsContainer;
 }
@@ -177,10 +158,10 @@ function createNoResultsMessage() {
 function createDivider() {
   const container = document.createElement('div');
   container.className = 'news-content-divider-container';
-  
+
   const line = document.createElement('div');
   line.className = 'news-content-divider-line';
-  
+
   container.appendChild(line);
   return container;
 }
@@ -211,6 +192,52 @@ function createLoadingIndicator() {
   return indicator;
 }
 
+const buildData = (items) => {
+  // Parse results into a highlight block
+  const blockContents = [];
+  items.forEach((item) => {
+    const row = [];
+    const cardBody = item['path'] ? document.createElement('a') : document.createElement('div');
+    const fields = ['path', 'image', 'title', 'description', 'lastModified'];
+    fields.forEach((fieldName) => {
+      if (fieldName === 'path') {
+        cardBody.href = item[fieldName];
+      } else if (fieldName === 'image') {
+        const cardImage = createOptimizedPicture(item[fieldName] === "0" ? DEFAULT_IMAGE : item[fieldName]);
+        if (cardImage) {
+          const pathImg = document.createElement('a');
+          pathImg.href = item.path;
+          pathImg.append(cardImage);
+          row.push(pathImg);
+        }
+      } else {
+        const div = document.createElement('div');
+        if (fieldName === 'lastModified') {
+          div.classList.add('date');
+          div.textContent = getFormattedDate(new Date(parseInt(item[fieldName], 10)));
+        } else if (fieldName === 'title') {
+          div.classList.add('news-card-title');
+          div.textContent = item[fieldName];
+        } else if (fieldName === 'description') {
+          div.classList.add('news-card-description');
+          div.textContent = getTrimmedDescription(item[fieldName]);
+        } else {
+          div.textContent = item[fieldName];
+        }
+        cardBody.appendChild(div);
+      }
+    });
+
+    if (cardBody) {
+      const path = document.createElement('a');
+      path.href = item.path;
+      cardBody.prepend(path);
+      row.push(cardBody);
+    }
+    blockContents.push(row);
+  });
+  return blockContents;
+};
 /**
  * Creates the filter dropdown with time period options
  * @returns {HTMLElement} Select element
@@ -264,10 +291,10 @@ export default async function decorate(block) {
     const filterSection = createFilterSection();
     const contentSection = document.createElement('div');
     contentSection.className = 'news-content-section';
-    
+
     const newsContentContainer = document.createElement('div');
     newsContentContainer.className = 'news-content-container';
-    
+
     // Initialize state
     let currentPage = 1;
     let allItems = [];
@@ -283,7 +310,7 @@ export default async function decorate(block) {
 
       await new Promise(resolve => setTimeout(resolve, 800));
       newsContentContainer.textContent = '';
-      
+
       if (allItems.length === 0) {
         newsContentContainer.appendChild(createNoResultsMessage());
         loadingIndicator.style.display = 'none';
@@ -291,32 +318,12 @@ export default async function decorate(block) {
       }
 
       const visibleItems = allItems.slice(0, page * ITEMS_PER_PAGE);
-       // Create the correct nested array structure for buildBlock
-      const newsCardsData = [];
-       visibleItems.forEach(item => {
-         newsCardsData.push([
-           {
-             elems: [
-               `<a href="${item.path}" class="news-card">
-                 <div class="cards-card-image">
-                   <img class="news-card-image" src="${item.image || DEFAULT_IMAGE}" alt="${item.title}"/>
-                 </div>
-                 <div class="cards-card-body">
-                   <div class="news-card-category">/ News category</div>
-                   <h3 class="news-card-title">${item.title || ''}</h3>
-                   <div class="news-card-date">${item.date || ''}</div>
-                   <div class="news-card-description">${item.description || ''}</div>
-                 </div>
-               </a>`
-             ]
-           }
-         ]);
-       });
-
+      const newsCardsData = buildData(visibleItems);
       // Now newsCardsData is an array of arrays of arrays: [[[HTML string]]]
       const newsBlock = buildBlock('news-cards', newsCardsData);
+
       await loadBlock(newsBlock);
-      
+
       newsContentContainer.append(newsBlock, loadingIndicator);
 
       if (allItems.length > page * ITEMS_PER_PAGE) {
@@ -327,7 +334,7 @@ export default async function decorate(block) {
           currentPage++;
           showItems(currentPage);
         });
-        
+
         loadingIndicator.style.display = 'none';
         newsContentContainer.append(moreButton);
       } else {
