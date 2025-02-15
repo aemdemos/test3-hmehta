@@ -3,96 +3,120 @@ header nav .section .default-content-wrapper {
     margin: auto;
 }
 
-header nav .section:nth-of-type(1) {
+header nav .global-header {
     height: 32px;
     padding-top: 3px;
     padding-bottom: 3px;
     background-color: #e0e0e0;
 }
 
-header nav .section:nth-of-type(1) ul {
-    position: relative;
-    top: 8px;
+header nav .global-header a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1;
+    vertical-align: top;
+    text-decoration: none;
 }
 
-header nav .section:nth-of-type(1) ul a:any-link {
-    color: #000;
-    font-size: 0.75rem;
-}
-
-header nav .section:nth-of-type(2) {
-    height: 33px;
-}
-
-header nav .section:nth-of-type(2) ul {
+header nav .global-quicklinks div {
+    height: 2rem;
     display: flex;
     justify-content: flex-end;
-    margin: 0;
 }
 
-header nav .section:nth-of-type(2) ul > li {
+header nav .global-quicklinks ul {
     background-color: #02084b;
-    padding: 3px 20px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
 }
 
-header nav .section:nth-of-type(2) ul > li a:any-link {
-    font-size: 0.875rem;
+header nav .global-quicklinks ul>li {
+    padding: 0;
+    margin: 2px 2px 8px 2px;
+    position: relative;
 }
 
-header nav .section:nth-of-type(2) ul > li a:any-link,
-header nav .section:nth-of-type(4) ul a:any-link {
-    color: #fff;
+header nav .global-quicklinks ul>li a:any-link {
+    font-family: "Zilla Slab";
+    font-size: .875rem;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: transparent;
 }
 
-header nav .section:nth-of-type(2) ul > li:nth-of-type(n+2) {
+header nav .global-quicklinks ul>li:nth-of-type(n+2) {
     border-left: 1px solid #fff;
 }
 
-header nav .section:nth-of-type(3) {
+header nav .local-header {
     height: 150px;
     margin-bottom: 30px;
 }
 
-header nav .section:nth-of-type(3) a:any-link {
-    color: #000;
+header nav .local-header  h1 {
+    font-size: 2.25rem;
+    font-family: Open Sans, sans-serif;
+    margin: 0;
+    line-height: 2.75rem;
+    font-weight: 700;
+    letter-spacing: .01em;
 }
 
-header nav .section:nth-of-type(3) > div:first-of-type {
+header nav .local-header p {
+    font-size: 18px;
+    letter-spacing: .03em;
+}
+
+header nav .local-header a:any-link {
+    color: #000;
+    text-decoration: none;
+}
+
+header nav .local-header>div:first-of-type {
     position: relative;
     padding-top: 30px;
 }
 
-header nav .section:nth-of-type(3) > div {
+header nav .local-header>div {
     padding-left: 160px;
     box-sizing: border-box;
 }
 
-header nav .section:nth-of-type(3) > div > p:last-of-type {
+header nav .local-header>div>p:last-of-type {
     position: absolute;
     top: -6px;
     left: 0;
 }
 
-header nav .section:nth-of-type(3) > div > p:last-of-type img {
+header nav .local-header>div>p:last-of-type img {
     width: 130px;
     height: auto;
 }
 
-header nav .section:nth-of-type(3) ul {
+header nav .local-header ul {
     display: flex;
     margin-top: 10px;
+    list-style: none;
+    padding-inline-start: 0;
 }
 
-header nav .section:nth-of-type(3) ul li {
-    margin-right: 30px;
+header nav .local-header ul li {
+    margin-right: 4rem;
+    font: 400 14px / 1.5 montserrat, Arial, sans-serif;
 }
 
-header nav .section:nth-of-type(4) {
+header nav .dropdown-menu {
     background-color: #02084b;
     height: 62px;
+    position: relative;
 }
 
-header nav .section:nth-of-type(4) ul {
+header nav .dropdown-menu ul {
     display: flex;
     flex: 1;
     width: 918px;
@@ -101,14 +125,88 @@ header nav .section:nth-of-type(4) ul {
     top: 18px;
 }
 
-header ul {
-    list-style: none;
-    padding: 0;
+header nav .dropdown-menu .submenu-wrapper {
+    top: 3rem;
+    left: 0px;
+    width: 1200px;
+    max-width: 1713px;
+    background: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    overflow: visible;
+    padding: 15px 0 30px 0;
     margin: 0;
+    color: #444;
+    font-size: 1rem;
+    position: absolute;
+    z-index: 970;
+    box-sizing: border-box;
+    list-style: none;
 }
 
-header h1 {
-    font-size: 2.25rem;
-    font-family: Open Sans, sans-serif;
-    margin: 0;
+header nav .dropdown-menu .submenu-wrapper h3 a {
+    font-size: 26px;
+    font-family: "Zilla Slab";
+    font-weight: 700;
+    margin-top: 0;
+    color: black;
+}
+
+header nav .dropdown-menu .submenu-wrapper h3 {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #b4b4b4;
+    margin: 0 1rem;
+}
+
+header nav .dropdown-menu .submenu-wrapper ul {
+    column-count: 3;
+    display: block;
+    padding: 0;
+    padding-left: .2rem;
+    list-style: none;
+    width: 100%;
+    margin-top: -0.2rem;
+    margin-bottom: 1rem;
+}
+
+header nav .dropdown-menu .submenu-wrapper ul li {
+    break-inside: avoid;
+    display: block;
+    box-sizing: content-box;
+    margin-bottom: 0.3rem;
+    padding: 5px 0;
+    min-width: 235px;
+    min-height: 30px;
+    position: relative;
+}
+
+header nav .dropdown-menu .submenu-wrapper ul li a {
+    font-size: 16px;
+    line-height: 1.38;
+    padding-left: 15px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    font-weight: 500;
+    padding: 5px 15px;
+    display: block;
+    letter-spacing: .03em;
+}
+
+header nav .dropdown-menu .submenu-wrapper ul li a:after {
+    padding-left: 8px;
+    content: '\f105';
+    font-family: 'FontAwesome';
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+header nav .global-quicklinks ul>li a:any-link,
+header nav .dropdown-menu ul a {
+    color: #fff;
+    text-decoration: none;
 }
