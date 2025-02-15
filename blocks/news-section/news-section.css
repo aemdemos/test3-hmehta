@@ -438,100 +438,81 @@
 
 /* Filter dropdown */
 .news-filter-select {
-  /* Box model */
-  display: inline-block;
-  width: 300px;
-  height: 39px;
-  margin: 0;
-  padding: 10px 30px;
-  box-sizing: border-box;
-  
-  /* Border and radius */
+  align-items: center;
+  appearance: none;
+  background-color: rgb(255, 255, 255);
   border: none;
   border-radius: 20px;
-  
-  /* Typography */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
   font-family: "Zilla Slab";
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-optical-sizing: auto;
   font-size: 16px;
+  font-size-adjust: none;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-alternates: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-emoji: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-variant-position: normal;
+  font-variation-settings: normal;
   font-weight: 500;
-  line-height: normal;
+  height: 39px;
   letter-spacing: normal;
-  text-align: left;
-  
-  /* Colors */
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  
-  /* Appearance */
-  appearance: none;
-  cursor: pointer;
+  line-height: normal;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 0;
   outline: none;
-  
-  /* Text handling */
-  text-transform: none;
-  white-space: nowrap;
-  text-wrap: nowrap;
   overflow: visible;
-  
-  /* Alignment */
-  align-items: center;
-}
-
-/* Hover state */
-.news-filter-select:hover {
-  background-color: rgba(0, 0, 0, 0.02);
-}
-
-/* Focus state */
-.news-filter-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(2, 8, 75, 0.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .news-filter-select {
-    width: 100%;
-    padding: 8px 20px;
-  }
-}
-
-/* Filter dropdown selected option */
-.news-filter-select option:checked,
-.news-filter-select option:selected {
-  /* Typography */
-  font-family: "Zilla Slab";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: normal;
+  padding: 10px 30px;
   text-align: left;
-  
-  /* Colors */
-  color: rgb(0, 0, 0);
-  
-  /* Box model */
-  display: block;
-  width: auto;
-  height: auto;
-  min-height: 19.2px;
-  
-  /* Padding */
-  padding: 0 2px 1px;
-  
-  /* Text handling */
+  text-indent: 0;
+  text-rendering: auto;
+  text-shadow: none;
+  text-size-adjust: 100%;
   text-transform: none;
-  white-space: nowrap;
   text-wrap: nowrap;
+  white-space: nowrap;
+  width: 300px;
   word-spacing: 0;
-  
-  /* Interaction */
-  cursor: pointer;
+  -webkit-rtl-ordering: logical;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-/* Ensure text remains visible during selection */
-.news-filter-select option:checked:not(:disabled),
-.news-filter-select option:selected:not(:disabled) {
-  background-color: rgb(2, 8, 75);
-  color: rgb(255, 255, 255);
+/* Target Webkit browsers specifically */
+.news-filter-select option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Target Firefox */
+.news-filter-select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+/* Target all option states */
+.news-filter-select option,
+.news-filter-select option:checked,
+.news-filter-select option:hover,
+.news-filter-select option:active,
+.news-filter-select option:focus {
+  background: white !important;
+  background-color: white !important;
+  color: black !important;
 }
