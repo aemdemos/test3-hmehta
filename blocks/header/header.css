@@ -125,6 +125,15 @@ header nav .dropdown-menu ul {
     top: 18px;
 }
 
+header nav .dropdown-menu ul > li > a {
+    padding: 24px 20px;
+}
+
+header nav .dropdown-menu ul > li > a.selected {
+    background-color: #ffffff;
+    color: #02084b;
+}
+
 header nav .dropdown-menu .submenu-wrapper {
     top: 3rem;
     left: 0px;

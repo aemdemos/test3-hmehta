@@ -48,13 +48,21 @@ export default async function decorate(block) {
             // Check if this submenu is already visible
             const isVisible = wrapper.style.display === 'block';
             
+            // Remove selected class from all links
+            document.querySelectorAll('.dropdown-menu ul > li > a').forEach(link => {
+              link.classList.remove('selected');
+            });
+            
             // Hide all submenu wrappers
             document.querySelectorAll('.submenu-wrapper').forEach(submenu => {
               submenu.style.display = 'none';
             });
             
-            // Toggle this submenu wrapper - show only if it wasn't visible before
+            // Toggle this submenu wrapper and selected class
             wrapper.style.display = isVisible ? 'none' : 'block';
+            if (!isVisible) {
+              parentLink.classList.add('selected');
+            }
           });
           
           // Create h3 with a link inside
