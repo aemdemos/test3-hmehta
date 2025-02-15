@@ -285,6 +285,74 @@ function createFilterLabel() {
   return label;
 }
 
+/**
+ * Creates the news count display
+ * @param {number} count - Number of news items
+ * @param {string} filterValue - Current filter value
+ * @returns {HTMLElement} Count display element
+ */
+function createNewsCount(count, filterValue) {
+  const countContainer = document.createElement('div');
+  countContainer.className = 'news-count-container';
+  
+  let dateRange = '';
+  
+  // Determine date range based on filter
+  switch(filterValue) {
+    case '7days':
+      dateRange = getDateRange(7);
+      break;
+    case '30days':
+      dateRange = getDateRange(30);
+      break;
+    case '90days':
+      dateRange = getDateRange(90);
+      break;
+    case 'all':
+      dateRange = ''; // Remove 'all time' text for 'all' filter
+      break;
+    default:
+      // For year filters
+      if (!isNaN(filterValue)) {
+        dateRange = `01/01/${filterValue} - 31/12/${filterValue}`;
+      }
+  }
+
+  countContainer.innerHTML = `
+  <span class="news-count-text">
+    <strong>${count}</strong> news item${count !== 1 ? 's' : ''}${dateRange ? ` from <strong>${dateRange}</strong>` : ''}
+  </span>
+`;
+  
+  return countContainer;
+}
+
+/**
+ * Gets formatted date range string
+ * @param {number} days - Number of days to look back
+ * @returns {string} Formatted date range
+ */
+function getDateRange(days) {
+  const endDate = new Date();
+  const startDate = new Date();
+  startDate.setDate(startDate.getDate() - days);
+  
+  return `${formatDate(startDate)} - ${formatDate(endDate)}`;
+}
+
+/**
+ * Formats date to DD/MM/YYYY
+ * @param {Date} date - Date to format
+ * @returns {string} Formatted date
+ */
+function formatDate(date) {
+  return date.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
+}
+
 export default async function decorate(block) {
   try {
     // Create filter and content sections
@@ -298,6 +366,7 @@ export default async function decorate(block) {
     let currentPage = 1;
     let allItems = [];
     const loadingIndicator = createLoadingIndicator();
+    let currentFilter = getFilterFromURL(); 
 
     /**
      * Updates displayed news items
@@ -315,6 +384,9 @@ export default async function decorate(block) {
         loadingIndicator.style.display = 'none';
         return;
       }
+
+      const countDisplay = createNewsCount(allItems.length, currentFilter);
+      newsContentContainer.appendChild(countDisplay);
 
       const visibleItems = allItems.slice(0, page * ITEMS_PER_PAGE);
       const newsCardsData = buildData(visibleItems);
@@ -346,6 +418,7 @@ export default async function decorate(block) {
      */
     const handleFilterChange = async (filterValue) => {
       currentPage = 1;
+      currentFilter = filterValue; // Update current filter
       loadingIndicator.style.display = 'block';
       updateURL(filterValue);
       allItems = await fetchNewsItems(filterValue);

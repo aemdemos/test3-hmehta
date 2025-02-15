@@ -1,3 +1,43 @@
+/* Main news section container */
+.news-section-wrapper {
+  /* Layout */
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  height: auto; /* Changed from fixed height for flexibility */
+  
+  /* Spacing */
+  margin: 0 0 30px 0;
+  padding: 0;
+  
+  /* Typography */
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+  color: rgb(0, 0, 0);
+  
+  /* Reset */
+  list-style: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .news-section-wrapper {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .news-section-wrapper {
+    padding: 0 15px;
+  }
+}
+
 /* Filter section styles */
 .news-filter-section {
   display: flex;
@@ -247,3 +287,251 @@
     color: inherit !important;
     text-decoration: none !important;
   }
+
+  /* More News button container - outer */
+.news-more-container {
+  box-sizing: border-box;
+  display: block;
+  width: 1200px;
+  height: 100px;
+  margin-bottom: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+}
+
+/* More News button container - inner */
+.news-more-wrapper {
+  display: block;
+  width: 840px;
+  height: 100px;
+  margin: 0 180px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+}
+
+/* More News button */
+.news-more-button {
+  /* Box model */
+  display: inline-block;
+  width: 840px;
+  height: 40px;
+  max-width: 100%;
+  margin: 60px 0 0;
+  padding: 0;
+  
+  /* Border */
+  border: 1px solid #02084b;
+  border-radius: 80px;
+  
+  /* Typography */
+  font-family: "Zilla Slab";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  
+  /* Colors and background */
+  background-color: transparent;
+  color: #000;
+  
+  /* Interaction */
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+}
+
+/* Button text */
+.news-more-button span {
+  display: block;
+  width: 838px;
+  font-family: "Zilla Slab";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.08px;
+  letter-spacing: 0.16px;
+  text-align: center;
+  color: #000;
+  margin: 0;
+}
+
+/* Hover state */
+.news-more-button:hover {
+  background-color: rgba(2, 8, 75, 0.05);
+}
+
+/* Active state */
+.news-more-button:active {
+  transform: translateY(1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .news-more-container {
+    width: 100%;
+  }
+  
+  .news-more-wrapper {
+    width: 100%;
+    max-width: 840px;
+    margin: 0 auto;
+  }
+  
+  .news-more-button,
+  .news-more-button span {
+    width: 100%;
+  }
+}
+
+/* Divider container */
+.news-content-divider-container {
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: block;
+  flex: 0 0 auto;
+  float: left;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 12px;
+  letter-spacing: 0.16px;
+  line-height: 24px;
+  margin: 0;
+  padding-left: 0;
+  width: 1200px;
+}
+
+/* Divider line */
+.news-content-divider-line {
+  border: none;
+  border-top: 2px solid #d8d8d8;
+  box-sizing: content-box;
+  clear: both;
+  color: rgb(0, 0, 0);
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 0;
+  letter-spacing: 0.16px;
+  line-height: 24px;
+  margin: 10px 0 0 0;
+  overflow: hidden;
+  padding: 0 10px;
+  width: 1180px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .news-content-divider-container,
+  .news-content-divider-line {
+    width: 100%;
+  }
+  
+  .news-content-divider-line {
+    margin: 10px auto 0;
+  }
+}
+
+/* Filter dropdown */
+.news-filter-select {
+  /* Box model */
+  display: inline-block;
+  width: 300px;
+  height: 39px;
+  margin: 0;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  
+  /* Border and radius */
+  border: none;
+  border-radius: 20px;
+  
+  /* Typography */
+  font-family: "Zilla Slab";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  
+  /* Colors */
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  
+  /* Appearance */
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  
+  /* Text handling */
+  text-transform: none;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  overflow: visible;
+  
+  /* Alignment */
+  align-items: center;
+}
+
+/* Hover state */
+.news-filter-select:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Focus state */
+.news-filter-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(2, 8, 75, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .news-filter-select {
+    width: 100%;
+    padding: 8px 20px;
+  }
+}
+
+/* Filter dropdown selected option */
+.news-filter-select option:checked,
+.news-filter-select option:selected {
+  /* Typography */
+  font-family: "Zilla Slab";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  
+  /* Colors */
+  color: rgb(0, 0, 0);
+  
+  /* Box model */
+  display: block;
+  width: auto;
+  height: auto;
+  min-height: 19.2px;
+  
+  /* Padding */
+  padding: 0 2px 1px;
+  
+  /* Text handling */
+  text-transform: none;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  word-spacing: 0;
+  
+  /* Interaction */
+  cursor: pointer;
+}
+
+/* Ensure text remains visible during selection */
+.news-filter-select option:checked:not(:disabled),
+.news-filter-select option:selected:not(:disabled) {
+  background-color: rgb(2, 8, 75);
+  color: rgb(255, 255, 255);
+}
