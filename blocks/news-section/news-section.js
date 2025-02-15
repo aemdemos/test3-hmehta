@@ -1,4 +1,4 @@
-import { buildBlock, loadBlock, createOptimizedPicture, getFormattedDate } from '../../scripts/aem.js';
+import { buildBlock, loadBlock, createOptimizedPicture, getFormattedDate , decorateBlock } from '../../scripts/aem.js';
 
 // Constants
 const ITEMS_PER_PAGE = 6;
@@ -108,7 +108,7 @@ function createFilterSection(onFilterChange) {
   const filterElements = {
     label: createFilterLabel(),
     select: createFilterDropdown(),
-    button: createFilterButton(onFilterChange)
+    button: createFilterButton(onFilterChange)  // Pass the callback here
   };
 
   filterContainer.append(filterElements.label, filterElements.select, filterElements.button);
@@ -124,14 +124,16 @@ function createFilterButton(onFilterChange) {
   const button = document.createElement('button');
   button.className = 'news-filter-button';
   button.textContent = 'Go';
-
+  button.type = 'button'; // Explicitly set button type
+  
+  // Add click event listener directly here
   button.addEventListener('click', () => {
-    const select = document.querySelector('#filterOption');
-    const selectedValue = select.value;
-    updateURL(selectedValue);
-    onFilterChange(selectedValue);
+    const select = button.parentElement.querySelector('#filterOption');
+    if (select) {
+      onFilterChange(select.value);
+    }
   });
-
+  
   return button;
 }
 
@@ -192,57 +194,50 @@ function createLoadingIndicator() {
   return indicator;
 }
 
-const buildData = (items) => {
-  // Parse results into a highlight block
-  const blockContents = [];
-  items.forEach((item) => {
-    const row = [];
-    const cardBody = item['path'] ? document.createElement('a') : document.createElement('div');
-    cardBody.classList.add('news-card');
-    const cardContent = document.createElement('div');
-    cardContent.classList.add('news-card-content');
-    cardBody.appendChild(cardContent);
-    const fields = ['path', 'image', 'title', 'description', 'lastModified'];
-    fields.forEach((fieldName) => {
-      if (fieldName === 'path') {
-        cardBody.href = item[fieldName];
-      } else if (fieldName === 'image') {
-        const cardImage = createOptimizedPicture(item[fieldName] === "0" ? DEFAULT_IMAGE : item[fieldName]);
-        cardImage.children[3].classList.add('news-card-image');
-        if (cardImage) {
-          const pathImg = document.createElement('a');
-          pathImg.href = item.path;
-          pathImg.append(cardImage);
-          row.push(pathImg);
-        }
-      } else {
-        const div = document.createElement('div');
-        if (fieldName === 'lastModified') {
-          div.classList.add('date');
-          div.textContent = getFormattedDate(new Date(parseInt(item[fieldName], 10)));
-        } else if (fieldName === 'title') {
-          div.classList.add('news-card-title');
-          div.textContent = item[fieldName];
-        } else if (fieldName === 'description') {
-          div.classList.add('news-card-description');
-          div.textContent = getTrimmedDescription(item[fieldName]);
-        } else {
-          div.textContent = item[fieldName];
-        }
-        cardContent.appendChild(div);
-      }
-    });
+/**
+ * Creates the data structure for news cards
+ * @param {Array} items - Array of news items
+ * @returns {Array} Formatted data for buildBlock
+ */
+function buildData(items) {
+  return [[
+    {
+      elems: [`<div><div>${JSON.stringify(items.map(item => {
+        // Format the date if lastModified exists
+        const date = item.lastModified 
+          ? new Date(parseInt(item.lastModified) * 1000).toLocaleDateString('en-US', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric'
+            })
+          : '';
 
-    if (cardBody) {
-      const path = document.createElement('a');
-      path.href = item.path;
-      cardBody.prepend(path);
-      row.push(cardBody);
+        // Format the publication date if it exists
+        const pubDate = item['publication-date'] && item['publication-date'] !== '0'
+          ? new Date(parseInt(item['publication-date']) * 1000).toLocaleDateString('en-US', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric'
+            })
+          : date; // fallback to lastModified date
+
+        return {
+          path: item.path || '#',
+         // image: item.image === '0' ? DEFAULT_IMAGE : item.image,
+         image: DEFAULT_IMAGE ,
+          title: item.title || '',
+          breadcrumbTitle: item['breadcrumb-title'] || '',
+          date: pubDate,
+          description: getTrimmedDescription(item.description || ''),
+          category: item.template || 'News category',
+          fromDepartment: item['from-the-department'] !== '0',
+          robots: item.robots !== '0'
+        };
+      }))}</div></div>`]
     }
-    blockContents.push(row);
-  });
-  return blockContents;
-};
+  ]];
+}
+
 /**
  * Creates the filter dropdown with time period options
  * @returns {HTMLElement} Select element
@@ -293,7 +288,6 @@ function createFilterLabel() {
 export default async function decorate(block) {
   try {
     // Create filter and content sections
-    const filterSection = createFilterSection();
     const contentSection = document.createElement('div');
     contentSection.className = 'news-cards';
 
@@ -326,10 +320,10 @@ export default async function decorate(block) {
       const newsCardsData = buildData(visibleItems);
       // Now newsCardsData is an array of arrays of arrays: [[[HTML string]]]
       const newsBlock = buildBlock('news-cards', newsCardsData);
-
+      newsContentContainer.append(newsBlock, loadingIndicator);
+      decorateBlock(newsBlock);
       await loadBlock(newsBlock);
 
-      newsContentContainer.append(newsBlock, loadingIndicator);
 
       if (allItems.length > page * ITEMS_PER_PAGE) {
         const moreButton = document.createElement('button');
@@ -358,13 +352,8 @@ export default async function decorate(block) {
       showItems(currentPage);
     };
 
-    // Add filter change listener
-    const filterButton = filterSection.querySelector('.news-filter-button');
-    filterButton.addEventListener('click', () => {
-      const select = filterSection.querySelector('#filterOption');
-      handleFilterChange(select.value);
-    });
-
+    // Create filter section with the callback
+    const filterSection = createFilterSection(handleFilterChange);
     // Setup structure
     contentSection.append(newsContentContainer);
     block.append(filterSection, createDivider(), contentSection);
