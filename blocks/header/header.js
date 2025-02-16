@@ -19,14 +19,64 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   
+  // Create and add hamburger button
+  const hamburger = document.createElement('button');
+  hamburger.className = 'hamburger';
+  for (let i = 0; i < 3; i++) {
+    const span = document.createElement('span');
+    hamburger.appendChild(span);
+  }
+  nav.appendChild(hamburger);
+
+  // Create and add overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'mobile-menu-overlay';
+  nav.appendChild(overlay);
+  
   // Define classes for the divs in order
-  const divClasses = ['global-header', 'global-quicklinks', 'local-header', 'dropdown-menu'];
+  const divClasses = ['global-header', 'global-quicklinks', 'local-header', 'dropdown-menu', 'mobile-menu'];
   let divIndex = 0;
   
   while (fragment.firstElementChild) {
     const element = fragment.firstElementChild;
     if (element.tagName === 'DIV' && divIndex < divClasses.length) {
       element.classList.add(divClasses[divIndex]);
+      
+      // Add classes to lists in mobile-menu
+      if (element.classList.contains('mobile-menu')) {
+        const lists = element.querySelectorAll('ul');
+        if (lists.length >= 2) {
+          lists[0].classList.add('mobile-global-links');
+          lists[1].classList.add('mobile-dropdown-menu');
+          
+          // Add click handlers for mobile dropdown menu
+          const dropdownItems = lists[1].querySelectorAll('li:has(> ul)');
+          dropdownItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+              // Only handle clicks on the item itself or its direct link
+              if (e.target === item || e.target === item.querySelector('a')) {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event bubbling to parent list items
+                
+                // Get the clicked submenu
+                const clickedSubmenu = item.querySelector('ul');
+                const isCurrentlyOpen = clickedSubmenu.classList.contains('show');
+                
+                // Close all submenus at the same level
+                const parentList = item.parentElement;
+                parentList.querySelectorAll(':scope > li > ul').forEach(submenu => {
+                  submenu.classList.remove('show');
+                });
+                
+                // If the clicked submenu wasn't open, open it
+                if (!isCurrentlyOpen) {
+                  clickedSubmenu.classList.add('show');
+                }
+              }
+            });
+          });
+        }
+      }
       
       // Add wrapper for sublist items
       if (element.classList.contains('dropdown-menu')) {
@@ -89,7 +139,18 @@ export default async function decorate(block) {
     nav.append(element);
   }
 
-  
+  // Add event listeners for mobile menu
+  hamburger.addEventListener('click', () => {
+    const mobileMenu = nav.querySelector('.mobile-menu');
+    mobileMenu.classList.toggle('open');
+    overlay.classList.toggle('open');
+  });
+
+  overlay.addEventListener('click', () => {
+    const mobileMenu = nav.querySelector('.mobile-menu');
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('open');
+  });
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
