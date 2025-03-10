@@ -1,0 +1,185 @@
+{
+  "originUrl": "https://www.thechannelco.com",
+  "urls": [
+    {
+      "url": "https://www.thechannelco.com/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/contact-us/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/fragments/marquee",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/what-genai-momentum-means-for-the-it-channel/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/why-are-80-of-channel-partners-underperforming/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/make-it-reign/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/xchange",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/WOTC",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/solutions/strategic-growth/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/contact-us",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/fragments/locations",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/what-genai-momentum-means-for-the-it-channel",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/category/blog/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/benefits-of-a-diverse-workplace-motivational-minutes/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/ai-fluent-part-1/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/why-are-80-of-channel-partners-underperforming",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/8-ways-to-gain-it-leader-interest-and-sustain-their-confidence/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/make-it-reign",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/category/article/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/xchange/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/wotc",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/wotc/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/solutions/strategic-growth",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/channelytics/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/channel-leadership-forum/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/channel-masters/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/category/blog",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/benefits-of-a-diverse-workplace-motivational-minutes",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/category/video/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/ai-fluent-part-1",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/category/webinar/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/ai-fluent-part-2/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/8-ways-to-gain-it-leader-interest-and-sustain-their-confidence",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/category/article",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/channelytics",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/channel-leadership-forum",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/channel-masters",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/category/video",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/category/webinar",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.thechannelco.com/ai-fluent-part-2",
+      "source": "CRAWL"
+    }
+  ],
+  "crawlOptions": {
+    "timeout": 64800000,
+    "inclusionPatterns": [],
+    "exclusionPatterns": [],
+    "limit": -1,
+    "sameDomain": true,
+    "keepHash": false,
+    "strategy": "crawl",
+    "logger": {}
+  },
+  "extractionErrors": [
+    {
+      "url": "https://www.thechannelco.com/assets/videos/new-hero-thechannelco.mp4",
+      "status": "content type is not text/html"
+    },
+    {
+      "url": "https://www.thechannelco.com/strategic-consulting",
+      "status": "404 Not Found"
+    }
+  ]
+}
