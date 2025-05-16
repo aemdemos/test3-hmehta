@@ -1,27 +1,59 @@
-.cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-}
 
 .cards > ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-gap: 24px;
 }
 
 .cards > ul > li {
+  border: 1px solid #dadada;
+  background-color: var(--background-color);
+}
+
+.cards .cards-card-body {
+  margin: 16px;
+}
+
+.cards .cards-card-image {
+  line-height: 0;
+}
+
+.cards > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.cards.cards39 {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cards.cards39 > ul {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  list-style: none;
+  grid-template-columns: unset !important;
+}
+
+.cards.cards39 > ul > li {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   background: #fff;
   border: 1px solid #E4E4EF;
   border-radius: 8px;
@@ -31,25 +63,10 @@
   box-sizing: border-box;
   margin: 0;
   position: relative;
+  float: none;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 16px;
+.cards.cards39 > ul > li:nth-child(3) {
+  border: 2px solid #3A3BA3;
+  z-index: 1;
 }
-
-.cards > ul > li h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0 0 8px 0;
-  text-align: center;
-}
-
-.cards > ul > li p {
-  font-size: 14px;
-  color: #666;
-  text-align: center;
-}
-
