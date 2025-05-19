@@ -1,0 +1,208 @@
+
+
+.cardsfirst > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-gap: 24px;
+}
+
+.cardsfirst > ul > li {
+  border: 1px solid #dadada;
+  background-color: var(--background-color);
+}
+
+.cardsfirst .cardsfirst-card-body {
+  margin: 16px;
+}
+
+.cardsfirst .cardsfirst-card-image {
+  line-height: 0;
+}
+
+.cardsfirst > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.cardsfirst.cardsfirst39 > ul {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  list-style: none;
+  grid-template-columns: unset !important;
+}
+
+.cardsfirst.cardsfirst39 > ul > li {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #E4E4EF;
+  border-radius: 8px;
+  width: 280px;
+  min-height: 370px;
+  padding: 24px;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  float: none;
+}
+
+.cardsfirst.cardsfirst39 > ul > li:nth-child(3) {
+  border: 2px solid #3A3BA3;
+  z-index: 1;
+}
+
+.cardsfirst.cardsfirst39 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 40px 0;
+  padding: 0;
+  background: transparent;
+}
+
+.cardsfirst.cardsfirst39 > ul {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.cardsfirst.cardsfirst39 > ul > li {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 320px;
+  min-width: 0;
+  min-height: 370px;
+  background: #fff;
+  border: 1px solid #e3e7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(44, 62, 80, 0.07);
+  padding: 24px 20px 20px 20px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  float: none;
+  overflow: hidden;
+}
+
+.cardsfirst.cardsfirst39 > ul > li > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.cardsfirst.cardsfirst39 > ul > li:nth-child(3) {
+  border: 1.5px solid #3841cc;
+  box-shadow: 0 4px 16px rgba(56, 65, 204, 0.09);
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .cardsfirst.cardsfirst39 > ul {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .cardsfirst.cardsfirst39 > ul > li {
+    width: 90vw;
+    max-width: 340px;
+    min-width: 200px;
+  }
+}
+
+.cardsfirst.cardsfirst39 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 40px 0;
+  padding: 0;
+  background: transparent;
+}
+
+.cardsfirst > ul {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 36px !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.cardsfirst > ul > li {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  min-height: 144px !important;
+  background: #fff !important;
+  border: 1px solid #e0e3f5 !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  padding: 24px !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+  position: relative;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.cardsfirst .cardsfirst-card-image {
+  display: none !important;
+}
+
+.cardsfirst .cardsfirst-card-body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: block !important;
+}
+
+.cardsfirst .cardsfirst-card-body h3 {
+  color: #1619a9 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin: 0 0 6px 0 !important;
+  line-height: 1.2 !important;
+  font-family: var(--heading-font-family);
+}
+
+.cardsfirst .cardsfirst-card-body p {
+  color: #000 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+  font-family: var(--body-font-family);
+}
+
+.cardsfirst {
+}
